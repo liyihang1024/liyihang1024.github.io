@@ -120,18 +120,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -149,9 +149,6 @@
       <span class="links-of-author-item">
         <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
       </span>
-      <span class="links-of-author-item">
-        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
   </div>
 
         </div>
@@ -165,6 +162,121 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/08/Transfer-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="李一航">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李一航的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 李一航的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/08/Transfer-Learning/" class="post-title-link" itemprop="url">Transfer Learning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-11-08 03:50:02 / Modified: 03:51:32" itemprop="dateCreated datePublished" datetime="2023-11-08T03:50:02+08:00">2023-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Machine-Learning/Transfer-Learning/" itemprop="url" rel="index"><span itemprop="name">Transfer Learning</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="spinel-to-perovskite-TL"><a href="#spinel-to-perovskite-TL" class="headerlink" title="spinel_to_perovskite_TL"></a>spinel_to_perovskite_TL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This project aims to investigate the feasibility of using deep neural networks for transfer learning in crystal formation energy prediction. Specifically, we explore the possibility of transferring the knowledge learned from training a model on spinel formation energy to predict perovskite formation energy.</p>
+<h2 id="Repository-Structure"><a href="#Repository-Structure" class="headerlink" title="Repository Structure"></a>Repository Structure</h2><p>The repository contains the following six folders:</p>
+<ul>
+<li><strong>1-source domain</strong>: contains the code for training the source domain model using spinel formation energy data.</li>
+<li><strong>2-target domain</strong>: contains the code for training the target domain model using perovskite formation energy data.</li>
+<li><strong>3-transfer learning</strong>: contains the code for transferring the knowledge learned from the source domain model to the target domain.</li>
+<li><strong>4-source domain predict target domain</strong>: contains the code for directly predicting perovskite formation energy using the source domain model.</li>
+<li><strong>CE-features-generation</strong>: contains the code for generating chemical environment (CE) features that contain information about the composition and crystal structure of materials.</li>
+<li><strong>raw_data</strong>: contains all the raw data required for training and evaluating the DNN models.</li>
+</ul>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Python 3.x</li>
+<li>For Python package dependencies, please refer to the requirements.txt file</li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ol>
+<li>Clone the repository to your local machine:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/liyihang1024/spinel_to_perovskite_TL.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Navigate to the project directory:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> spinel_to_perovskite_TL</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Install dependencies:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Run the project:</li>
+</ol>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
