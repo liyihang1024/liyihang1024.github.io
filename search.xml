@@ -35,7 +35,7 @@
 </ol>
 <h2 id="反馈和建议"><a href="#反馈和建议" class="headerlink" title="反馈和建议"></a>反馈和建议</h2><p>如果您在使用过程中遇到任何问题，或者有任何建议和想法，请随时联系我们，我们将尽快回复您。您可以通过以下方式与我们联系：</p>
 <ul>
-<li>发送电子邮件至<a href="mailto:&#x6c;&#105;&#x79;&#x69;&#104;&#97;&#110;&#x67;&#64;&#x73;&#x68;&#117;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;">&#x6c;&#105;&#x79;&#x69;&#104;&#97;&#110;&#x67;&#64;&#x73;&#x68;&#117;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;</a></li>
+<li>发送电子邮件至<a href="mailto:&#x6c;&#x69;&#121;&#x69;&#104;&#x61;&#110;&#103;&#64;&#x73;&#x68;&#x75;&#46;&#101;&#100;&#x75;&#46;&#x63;&#110;">&#x6c;&#x69;&#121;&#x69;&#104;&#x61;&#110;&#103;&#64;&#x73;&#x68;&#x75;&#46;&#101;&#100;&#x75;&#46;&#x63;&#110;</a></li>
 <li>在我们的GitHub仓库中提出问题</li>
 </ul>
 <h2 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h2><p>SearchRight是由liyihang开发的，如果您有任何开发相关的问题或建议，请联系我们，我们将非常乐意与您交流。</p>
@@ -259,20 +259,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日更新</title>
-    <url>/2023/11/08/%E4%BB%8A%E6%97%A5%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
-<p><img src="/images/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/shushu.jpg" alt="图片"></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>HelloWorld</tag>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的第一篇博客文章</title>
     <url>/2023/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
@@ -377,6 +363,33 @@
 </li>
 </ul>
 <p>如果您喜欢该项目，请给我们一个star支持，谢谢！</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>HelloWorld</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2023/11/08/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/shushu.jpg" alt="图片"></p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日更新</title>
+    <url>/2023/11/08/%E4%BB%8A%E6%97%A5%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/shushu.jpg" alt="图片"></p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
