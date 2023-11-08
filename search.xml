@@ -35,7 +35,7 @@
 </ol>
 <h2 id="反馈和建议"><a href="#反馈和建议" class="headerlink" title="反馈和建议"></a>反馈和建议</h2><p>如果您在使用过程中遇到任何问题，或者有任何建议和想法，请随时联系我们，我们将尽快回复您。您可以通过以下方式与我们联系：</p>
 <ul>
-<li>发送电子邮件至<a href="mailto:&#108;&#105;&#x79;&#105;&#x68;&#x61;&#x6e;&#x67;&#64;&#115;&#x68;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;">&#108;&#105;&#x79;&#105;&#x68;&#x61;&#x6e;&#x67;&#64;&#115;&#x68;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;</a></li>
+<li>发送电子邮件至<a href="mailto:&#108;&#105;&#x79;&#x69;&#104;&#97;&#110;&#103;&#64;&#115;&#104;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;">&#108;&#105;&#x79;&#x69;&#104;&#97;&#110;&#103;&#64;&#115;&#104;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;</a></li>
 <li>在我们的GitHub仓库中提出问题</li>
 </ul>
 <h2 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h2><p>SearchRight是由liyihang开发的，如果您有任何开发相关的问题或建议，请联系我们，我们将非常乐意与您交流。</p>
@@ -46,54 +46,6 @@
       </categories>
       <tags>
         <tag>Edge extension</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Transfer Learning</title>
-    <url>/2023/11/08/Transfer-Learning/</url>
-    <content><![CDATA[<h1 id="spinel-to-perovskite-TL"><a href="#spinel-to-perovskite-TL" class="headerlink" title="spinel_to_perovskite_TL"></a>spinel_to_perovskite_TL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This project aims to investigate the feasibility of using deep neural networks for transfer learning in crystal formation energy prediction. Specifically, we explore the possibility of transferring the knowledge learned from training a model on spinel formation energy to predict perovskite formation energy.</p>
-<h2 id="Repository-Structure"><a href="#Repository-Structure" class="headerlink" title="Repository Structure"></a>Repository Structure</h2><p>The repository contains the following six folders:</p>
-<ul>
-<li><strong>1-source domain</strong>: contains the code for training the source domain model using spinel formation energy data.</li>
-<li><strong>2-target domain</strong>: contains the code for training the target domain model using perovskite formation energy data.</li>
-<li><strong>3-transfer learning</strong>: contains the code for transferring the knowledge learned from the source domain model to the target domain.</li>
-<li><strong>4-source domain predict target domain</strong>: contains the code for directly predicting perovskite formation energy using the source domain model.</li>
-<li><strong>CE-features-generation</strong>: contains the code for generating chemical environment (CE) features that contain information about the composition and crystal structure of materials.</li>
-<li><strong>raw_data</strong>: contains all the raw data required for training and evaluating the DNN models.</li>
-</ul>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>Python 3.x</li>
-<li>For Python package dependencies, please refer to the requirements.txt file</li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ol>
-<li>Clone the repository to your local machine:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/liyihang1024/spinel_to_perovskite_TL.git</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Navigate to the project directory:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> spinel_to_perovskite_TL</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Install dependencies:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Run the project:</li>
-</ol>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-        <category>Transfer Learning</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Transfer Learning</tag>
-        <tag>Deep Learning</tag>
-        <tag>ANN</tag>
       </tags>
   </entry>
   <entry>
@@ -257,6 +209,54 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Transfer Learning</title>
+    <url>/2023/11/08/Transfer-Learning/</url>
+    <content><![CDATA[<h1 id="spinel-to-perovskite-TL"><a href="#spinel-to-perovskite-TL" class="headerlink" title="spinel_to_perovskite_TL"></a>spinel_to_perovskite_TL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This project aims to investigate the feasibility of using deep neural networks for transfer learning in crystal formation energy prediction. Specifically, we explore the possibility of transferring the knowledge learned from training a model on spinel formation energy to predict perovskite formation energy.</p>
+<h2 id="Repository-Structure"><a href="#Repository-Structure" class="headerlink" title="Repository Structure"></a>Repository Structure</h2><p>The repository contains the following six folders:</p>
+<ul>
+<li><strong>1-source domain</strong>: contains the code for training the source domain model using spinel formation energy data.</li>
+<li><strong>2-target domain</strong>: contains the code for training the target domain model using perovskite formation energy data.</li>
+<li><strong>3-transfer learning</strong>: contains the code for transferring the knowledge learned from the source domain model to the target domain.</li>
+<li><strong>4-source domain predict target domain</strong>: contains the code for directly predicting perovskite formation energy using the source domain model.</li>
+<li><strong>CE-features-generation</strong>: contains the code for generating chemical environment (CE) features that contain information about the composition and crystal structure of materials.</li>
+<li><strong>raw_data</strong>: contains all the raw data required for training and evaluating the DNN models.</li>
+</ul>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Python 3.x</li>
+<li>For Python package dependencies, please refer to the requirements.txt file</li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ol>
+<li>Clone the repository to your local machine:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/liyihang1024/spinel_to_perovskite_TL.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Navigate to the project directory:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> spinel_to_perovskite_TL</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Install dependencies:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Run the project:</li>
+</ol>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+        <category>Transfer Learning</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Transfer Learning</tag>
+        <tag>Deep Learning</tag>
+        <tag>ANN</tag>
+      </tags>
   </entry>
   <entry>
     <title>今日更新</title>

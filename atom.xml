@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>李一航的博客</title>
+  <title>Liyihang&#39;s Blog</title>
   
-  
+  <subtitle>Action speak louder than words!</subtitle>
   <link href="https://liyihang1024.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyihang1024.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://liyihang1024.github.io/</id>
   
   <author>
-    <name>李一航</name>
+    <name>Liyihang</name>
     
   </author>
   
@@ -46,7 +46,7 @@
     <published>2023-11-07T20:28:05.000Z</published>
     <updated>2023-11-08T03:08:55.616Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Edge-extension-right-click-search"><a href="#Edge-extension-right-click-search" class="headerlink" title="Edge-extension-right_click_search"></a>Edge-extension-right_click_search</h1><h1 id="右键搜索神器”二十四桥明月夜”-一个浏览器插件"><a href="#右键搜索神器”二十四桥明月夜”-一个浏览器插件" class="headerlink" title="右键搜索神器”二十四桥明月夜” - 一个浏览器插件"></a>右键搜索神器”二十四桥明月夜” - 一个浏览器插件</h1><p><img src="/images/usage.png" alt="usage"></p><p>“<strong>二十四桥明月夜</strong>“是一个方便快捷的浏览器插件，它可以帮助你在网页上直接搜索选中的文本，而不需要手动复制、打开搜索引擎页面、粘贴等繁琐的操作，节省您宝贵的时间和精力。目前支持以下搜索平台：</p><ul><li>百度搜索</li><li>谷歌搜索</li><li>必应搜索</li><li>百度学术搜索</li><li>谷歌学术搜索</li><li>百度翻译</li><li>谷歌翻译</li><li>哔哩哔哩搜索</li><li>YouTube搜索</li><li>X-MOL搜索</li><li>Materials Project晶体结构数据库搜索</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li>克隆或下载本仓库</li><li>在 Chrome 浏览器中打开 chrome:&#x2F;&#x2F;extensions&#x2F;</li><li>启用开发者模式</li><li>点击“加载已解压的扩展程序”按钮</li><li>选择下载的文件夹</li></ol><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>在浏览器中打开任意网页</li><li>选中你要搜索的文本</li><li>右键点击选中的文本</li><li>在弹出的右键菜单中选择“二十四桥明月夜”</li><li>在子菜单中选择你要搜索的平台</li><li>点击对应的子菜单项即可进行搜索</li></ol><h2 id="反馈和建议"><a href="#反馈和建议" class="headerlink" title="反馈和建议"></a>反馈和建议</h2><p>如果您在使用过程中遇到任何问题，或者有任何建议和想法，请随时联系我们，我们将尽快回复您。您可以通过以下方式与我们联系：</p><ul><li>发送电子邮件至<a href="mailto:&#108;&#105;&#x79;&#105;&#x68;&#x61;&#x6e;&#x67;&#64;&#115;&#x68;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;">&#108;&#105;&#x79;&#105;&#x68;&#x61;&#x6e;&#x67;&#64;&#115;&#x68;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#99;&#110;</a></li><li>在我们的GitHub仓库中提出问题</li></ul><h2 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h2><p>SearchRight是由liyihang开发的，如果您有任何开发相关的问题或建议，请联系我们，我们将非常乐意与您交流。</p><h2 id="版权声明"><a href="#版权声明" class="headerlink" title="版权声明"></a>版权声明</h2><p>SearchRight是一款完全免费的软件，遵循MIT许可证，可以在任意环境下自由使用、修改和分发。请在使用时遵守当地法律法规，本软件不承担任何法律责任。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Edge-extension-right-click-search"><a href="#Edge-extension-right-click-search" class="headerlink" title="Edge-extension-right_click_search"></a>Edge-extension-right_click_search</h1><h1 id="右键搜索神器”二十四桥明月夜”-一个浏览器插件"><a href="#右键搜索神器”二十四桥明月夜”-一个浏览器插件" class="headerlink" title="右键搜索神器”二十四桥明月夜” - 一个浏览器插件"></a>右键搜索神器”二十四桥明月夜” - 一个浏览器插件</h1><p><img src="/images/usage.png" alt="usage"></p><p>“<strong>二十四桥明月夜</strong>“是一个方便快捷的浏览器插件，它可以帮助你在网页上直接搜索选中的文本，而不需要手动复制、打开搜索引擎页面、粘贴等繁琐的操作，节省您宝贵的时间和精力。目前支持以下搜索平台：</p><ul><li>百度搜索</li><li>谷歌搜索</li><li>必应搜索</li><li>百度学术搜索</li><li>谷歌学术搜索</li><li>百度翻译</li><li>谷歌翻译</li><li>哔哩哔哩搜索</li><li>YouTube搜索</li><li>X-MOL搜索</li><li>Materials Project晶体结构数据库搜索</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li>克隆或下载本仓库</li><li>在 Chrome 浏览器中打开 chrome:&#x2F;&#x2F;extensions&#x2F;</li><li>启用开发者模式</li><li>点击“加载已解压的扩展程序”按钮</li><li>选择下载的文件夹</li></ol><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>在浏览器中打开任意网页</li><li>选中你要搜索的文本</li><li>右键点击选中的文本</li><li>在弹出的右键菜单中选择“二十四桥明月夜”</li><li>在子菜单中选择你要搜索的平台</li><li>点击对应的子菜单项即可进行搜索</li></ol><h2 id="反馈和建议"><a href="#反馈和建议" class="headerlink" title="反馈和建议"></a>反馈和建议</h2><p>如果您在使用过程中遇到任何问题，或者有任何建议和想法，请随时联系我们，我们将尽快回复您。您可以通过以下方式与我们联系：</p><ul><li>发送电子邮件至<a href="mailto:&#108;&#105;&#x79;&#x69;&#104;&#97;&#110;&#103;&#64;&#115;&#104;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;">&#108;&#105;&#x79;&#x69;&#104;&#97;&#110;&#103;&#64;&#115;&#104;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;</a></li><li>在我们的GitHub仓库中提出问题</li></ul><h2 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h2><p>SearchRight是由liyihang开发的，如果您有任何开发相关的问题或建议，请联系我们，我们将非常乐意与您交流。</p><h2 id="版权声明"><a href="#版权声明" class="headerlink" title="版权声明"></a>版权声明</h2><p>SearchRight是一款完全免费的软件，遵循MIT许可证，可以在任意环境下自由使用、修改和分发。请在使用时遵守当地法律法规，本软件不承担任何法律责任。</p>]]></content>
     
     
     <summary type="html">这是显示在首页的概述，正文内容均会被隐藏。</summary>
