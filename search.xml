@@ -24,11 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2023/11/08/test/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>机器学习入门教程</title>
     <url>/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="机器学习入门教程"><a href="#机器学习入门教程" class="headerlink" title="机器学习入门教程"></a>机器学习入门教程</h1><h2 id="1-机器学习简介"><a href="#1-机器学习简介" class="headerlink" title="1. 机器学习简介"></a>1. 机器学习简介</h2><p>机器学习是人工智能的一个分支，它使计算机能够从数据中学习并作出决策或预测。它涉及从历史数据中发现模式并基于这些模式来预测未来或进行其他类型的决策。</p>
@@ -68,10 +63,5 @@
       <tags>
         <tag>机器学习</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>test1</title>
-    <url>/2023/11/08/test1/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
