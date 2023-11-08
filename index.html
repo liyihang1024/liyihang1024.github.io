@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"liyihang1024.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"liyihang1024.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="李一航的博客">
@@ -76,6 +76,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -83,12 +84,38 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-search"><a href="/search/" rel="section"><i class="fa fa-search fa-fw"></i>搜索</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </header>
         
@@ -201,7 +228,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 10:56:56 / 修改时间：10:57:35" itemprop="dateCreated datePublished" datetime="2023-11-08T10:56:56+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 10:56:56 / 修改时间：11:08:48" itemprop="dateCreated datePublished" datetime="2023-11-08T10:56:56+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -223,9 +250,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
-<p><img src="/images/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/shushu.jpg" alt="图片"></p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/08/%E4%BB%8A%E6%97%A5%E6%9B%B4%E6%96%B0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -281,7 +314,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 04:28:05 / 修改时间：04:29:36" itemprop="dateCreated datePublished" datetime="2023-11-08T04:28:05+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 04:28:05 / 修改时间：11:08:55" itemprop="dateCreated datePublished" datetime="2023-11-08T04:28:05+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -303,44 +336,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Edge-extension-right-click-search"><a href="#Edge-extension-right-click-search" class="headerlink" title="Edge-extension-right_click_search"></a>Edge-extension-right_click_search</h1><h1 id="右键搜索神器”二十四桥明月夜”-一个浏览器插件"><a href="#右键搜索神器”二十四桥明月夜”-一个浏览器插件" class="headerlink" title="右键搜索神器”二十四桥明月夜” - 一个浏览器插件"></a>右键搜索神器”二十四桥明月夜” - 一个浏览器插件</h1><p><img src="/images/usage.png" alt="usage"></p>
-<p>“<strong>二十四桥明月夜</strong>“是一个方便快捷的浏览器插件，它可以帮助你在网页上直接搜索选中的文本，而不需要手动复制、打开搜索引擎页面、粘贴等繁琐的操作，节省您宝贵的时间和精力。目前支持以下搜索平台：</p>
-<ul>
-<li>百度搜索</li>
-<li>谷歌搜索</li>
-<li>必应搜索</li>
-<li>百度学术搜索</li>
-<li>谷歌学术搜索</li>
-<li>百度翻译</li>
-<li>谷歌翻译</li>
-<li>哔哩哔哩搜索</li>
-<li>YouTube搜索</li>
-<li>X-MOL搜索</li>
-<li>Materials Project晶体结构数据库搜索</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li>克隆或下载本仓库</li>
-<li>在 Chrome 浏览器中打开 chrome:&#x2F;&#x2F;extensions&#x2F;</li>
-<li>启用开发者模式</li>
-<li>点击“加载已解压的扩展程序”按钮</li>
-<li>选择下载的文件夹</li>
-</ol>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
-<li>在浏览器中打开任意网页</li>
-<li>选中你要搜索的文本</li>
-<li>右键点击选中的文本</li>
-<li>在弹出的右键菜单中选择“二十四桥明月夜”</li>
-<li>在子菜单中选择你要搜索的平台</li>
-<li>点击对应的子菜单项即可进行搜索</li>
-</ol>
-<h2 id="反馈和建议"><a href="#反馈和建议" class="headerlink" title="反馈和建议"></a>反馈和建议</h2><p>如果您在使用过程中遇到任何问题，或者有任何建议和想法，请随时联系我们，我们将尽快回复您。您可以通过以下方式与我们联系：</p>
-<ul>
-<li>发送电子邮件至<a href="mailto:&#108;&#105;&#121;&#105;&#104;&#97;&#110;&#103;&#64;&#x73;&#104;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;">&#108;&#105;&#121;&#105;&#104;&#97;&#110;&#103;&#64;&#x73;&#104;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;</a></li>
-<li>在我们的GitHub仓库中提出问题</li>
-</ul>
-<h2 id="开发者"><a href="#开发者" class="headerlink" title="开发者"></a>开发者</h2><p>SearchRight是由liyihang开发的，如果您有任何开发相关的问题或建议，请联系我们，我们将非常乐意与您交流。</p>
-<h2 id="版权声明"><a href="#版权声明" class="headerlink" title="版权声明"></a>版权声明</h2><p>SearchRight是一款完全免费的软件，遵循MIT许可证，可以在任意环境下自由使用、修改和分发。请在使用时遵守当地法律法规，本软件不承担任何法律责任。</p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/08/Edge-extension/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -396,7 +400,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 03:50:02 / 修改时间：03:51:32" itemprop="dateCreated datePublished" datetime="2023-11-08T03:50:02+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 03:50:02 / 修改时间：11:09:15" itemprop="dateCreated datePublished" datetime="2023-11-08T03:50:02+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -422,40 +426,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="spinel-to-perovskite-TL"><a href="#spinel-to-perovskite-TL" class="headerlink" title="spinel_to_perovskite_TL"></a>spinel_to_perovskite_TL</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This project aims to investigate the feasibility of using deep neural networks for transfer learning in crystal formation energy prediction. Specifically, we explore the possibility of transferring the knowledge learned from training a model on spinel formation energy to predict perovskite formation energy.</p>
-<h2 id="Repository-Structure"><a href="#Repository-Structure" class="headerlink" title="Repository Structure"></a>Repository Structure</h2><p>The repository contains the following six folders:</p>
-<ul>
-<li><strong>1-source domain</strong>: contains the code for training the source domain model using spinel formation energy data.</li>
-<li><strong>2-target domain</strong>: contains the code for training the target domain model using perovskite formation energy data.</li>
-<li><strong>3-transfer learning</strong>: contains the code for transferring the knowledge learned from the source domain model to the target domain.</li>
-<li><strong>4-source domain predict target domain</strong>: contains the code for directly predicting perovskite formation energy using the source domain model.</li>
-<li><strong>CE-features-generation</strong>: contains the code for generating chemical environment (CE) features that contain information about the composition and crystal structure of materials.</li>
-<li><strong>raw_data</strong>: contains all the raw data required for training and evaluating the DNN models.</li>
-</ul>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>Python 3.x</li>
-<li>For Python package dependencies, please refer to the requirements.txt file</li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ol>
-<li>Clone the repository to your local machine:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/liyihang1024/spinel_to_perovskite_TL.git</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Navigate to the project directory:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> spinel_to_perovskite_TL</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Install dependencies:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Run the project:</li>
-</ol>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/08/Transfer-Learning/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -511,7 +490,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 01:55:14 / 修改时间：01:57:28" itemprop="dateCreated datePublished" datetime="2023-11-08T01:55:14+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 01:55:14 / 修改时间：11:09:09" itemprop="dateCreated datePublished" datetime="2023-11-08T01:55:14+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -537,138 +516,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>This project is a GUI framework for implementing various machine learning algorithms for prediction.</p>
-<p><img src="/./figures/usage.png" alt="图片"></p>
-<div class="language-selector">
-  <a href="README.md">English</a>
-  <a href="README-zh.md">中文</a>
-</div>
-
-<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#main-features">Main Features</a></li>
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#project-content">Project Content</a></li>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#contributors">Contributors</a></li>
-<li><a href="#license">License</a></li>
-<li><a href="#acknowledgments">Acknowledgments</a></li>
-</ul>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Machine Learning Toolkit is a GUI framework for implementing various machine learning algorithms for prediction. It supports common regression, classification, clustering, and dimensionality reduction algorithms. This project is written in Python language and PyQt5 framework, and has the following main features:</p>
-<h2 id="Main-Features"><a href="#Main-Features" class="headerlink" title="Main Features"></a>Main Features</h2><ul>
-<li><p><strong>Import Data</strong>: Users can import their own data into the GUI for processing.</p>
-</li>
-<li><p><strong>Normalization</strong>: Users can choose whether to normalize the input data and provide multiple common data normalization methods for selection.</p>
-</li>
-<li><p><strong>Data Split</strong>: Users can set the data split ratio of the training set and the independent test set, and set whether to randomize the data before splitting the training set&#x2F;test set and set a random seed to ensure the repeatability of each split.</p>
-</li>
-<li><p><strong>Select Algorithm</strong>: Choose different machine learning algorithms according to project requirements, including regression, classification, clustering, and dimensionality reduction algorithms.</p>
-</li>
-<li><p><strong>Modify Hyperparameters</strong>: Users can modify the hyperparameters of the machine learning model to achieve better prediction results.</p>
-</li>
-<li><p><strong>Cross-validation</strong>: Users can choose whether to perform cross-validation and provide multiple cross-validation methods, such as K-fold cross-validation, leave-one-out cross-validation, leave-P-out cross-validation, and stratified cross-validation.</p>
-</li>
-<li><p><strong>CPU Cores</strong>: Users can set the number of CPU cores used when training the model.</p>
-</li>
-<li><p><strong>Save Model</strong>: Users can choose whether to save the trained machine learning model.</p>
-</li>
-<li><p><strong>Predictive Result Analysis</strong>: Users can preview the predictive result data of the trained machine learning model and various common predictive score indicators, and perform various visualization and analysis of the predictive result.</p>
-</li>
-</ul>
-<p>This project aims to provide a powerful tool for machine learning beginners and professionals to help them quickly and easily implement machine learning models and analyze and optimize model performance.</p>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li><p>Python 3.x</p>
-</li>
-<li><p>For Python package dependencies, please refer to the requirements.txt file</p>
-</li>
-</ul>
-<h2 id="Project-Content"><a href="#Project-Content" class="headerlink" title="Project Content"></a>Project Content</h2><p>The file structure in the project should be as follows:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Machine-Learning-Toolkit</span><br><span class="line">├── __pycache__</span><br><span class="line">├── databases</span><br><span class="line">├── figures</span><br><span class="line">├── icon</span><br><span class="line">├── model</span><br><span class="line">├── ML_GUI.ui</span><br><span class="line">├── Ui_ML_GUI.py</span><br><span class="line">├── main.py</span><br><span class="line">├── requirements.txt</span><br><span class="line">├── README.md</span><br><span class="line">├── README-zh.md</span><br><span class="line">├── LICENSE</span><br></pre></td></tr></table></figure>
-
-<p>Here are the brief introductions of each item in the “Machine-Learning-Toolkit” project:</p>
-<ul>
-<li><p><strong>pycache</strong>: This directory contains the compiled bytecode of the Python files.</p>
-</li>
-<li><p><strong>databases</strong>: This directory contains the sample datasets that can be used for testing and training purposes.</p>
-</li>
-<li><p><strong>figures</strong>: This directory contains the figures generated during the model training and prediction process.</p>
-</li>
-<li><p><strong>icon</strong>: This directory contains the icon used for the application interface.</p>
-</li>
-<li><p><strong>model</strong>: This directory contains the trained models that can be used for prediction purposes.</p>
-</li>
-<li><p><strong>ML_GUI.ui</strong>: This file is the user interface designed in the Qt Designer tool.</p>
-</li>
-<li><p><strong>Ui_ML_GUI.py</strong>: This file is the Python code generated by converting the ML_GUI.ui file.</p>
-</li>
-<li><p><strong>main.py</strong>: This file is the main program that integrates all the functions and runs the application.</p>
-</li>
-<li><p><strong>requirements.txt</strong>: This file lists all the Python package dependencies required for running the application.</p>
-</li>
-<li><p><strong>README.md</strong>: This file is the English version of the project README file that provides an overview of the project.</p>
-</li>
-<li><p><strong>README-zh.md</strong>: This file is the Chinese version of the project README file that provides an overview of the project.</p>
-</li>
-<li><p><strong>LICENSE</strong>: This file contains the license terms under which the project is distributed.</p>
-</li>
-</ul>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol>
-<li>Clone the repository to your local machine:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/yourusername/Machine-Learning-Toolkit.git</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Navigate to the project directory:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Machine-Learning-Toolkit</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Install dependencies:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Run the project:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ol>
-<li><p><strong>Import Data</strong>: Click the Import Data button and select the data file to import.</p>
-</li>
-<li><p><strong>Normalize Data</strong>: Select whether to normalize the input data in the Data Normalization area.</p>
-</li>
-<li><p><strong>Randomize Data</strong>: Select whether to randomize the data before splitting the training set&#x2F;test set in the Data Split area, set a random seed to ensure the repeatability of each split, and click the Run button.</p>
-</li>
-<li><p><strong>Set Data Split Ratio</strong>: Set the data split ratio of the training set and test set in the Data Split area, and click the Run button.</p>
-</li>
-<li><p><strong>Select Algorithm</strong>: Choose the algorithm you want to use in the Algorithm Selection area and click the Run button.</p>
-</li>
-<li><p><strong>Modify Hyperparameters</strong>: Modify the hyperparameters in the Hyperparameter area and click the Run button.</p>
-</li>
-<li><p><strong>Save Model</strong>: Choose whether to save the model in the Save Model area, select the save path, and click the Run button.</p>
-</li>
-<li><p><strong>View Results</strong>: In the Prediction Results window, you can see the source data and predicted data as well as various predictive evaluation indicators.</p>
-</li>
-</ol>
-<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.x-mol.com/groups/flygroup/people/18563">Yihang Li</a></li>
-</ul>
-<p>We welcome contributions to this project. If you find any issues or have any suggestions, please submit them in the Issues or create a Pull Request to make changes.</p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
-<h2 id="Acknowledgments"><a href="#Acknowledgments" class="headerlink" title="Acknowledgments"></a>Acknowledgments</h2><p>We would like to thank the following open-source projects and libraries for their help and support in the development and implementation of this project:</p>
-<ul>
-<li><p>Pyqt5</p>
-</li>
-<li><p>Pandas</p>
-</li>
-<li><p>Scikit-learn</p>
-</li>
-<li><p>Matplotlib</p>
-</li>
-</ul>
-<p>If you like this project, please give us a star to show your support. Thank you!</p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/08/My-First-Blog/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -724,7 +580,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-08 01:54:58 / 修改时间：02:10:10" itemprop="dateCreated datePublished" datetime="2023-11-08T01:54:58+08:00">2023-11-08</time>
+      <time title="创建时间：2023-11-08 01:54:58 / 修改时间：11:07:59" itemprop="dateCreated datePublished" datetime="2023-11-08T01:54:58+08:00">2023-11-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -746,109 +602,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Machine-Learning-Toolkit"><a href="#Machine-Learning-Toolkit" class="headerlink" title="Machine-Learning-Toolkit"></a>Machine-Learning-Toolkit</h1><p>该项目是一个用于实现各种机器学习算法预测的 GUI 框架。</p>
-<p><img src="/images/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/shushu.jpg" alt="图片"></p>
-<div class="language-selector">
-  <a href="README.md">English</a>
-  <a href="README-zh.md">中文</a>
-</div>
-
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">项目介绍</a></li>
-<li><a href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD">主要功能</a></li>
-<li><a href="#%E4%BE%9D%E8%B5%96%E6%9D%A1%E4%BB%B6">依赖条件</a></li>
-<li><a href="#%E9%A1%B9%E7%9B%AE%E5%86%85%E5%AE%B9">项目内容</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8">使用</a></li>
-<li><a href="#%E8%B4%A1%E7%8C%AE%E8%80%85">贡献者</a></li>
-<li><a href="#%E8%AE%B8%E5%8F%AF%E8%AF%81">许可证</a></li>
-<li><a href="#%E8%87%B4%E8%B0%A2">致谢</a></li>
-</ul>
-<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>Machine Learning Toolkit 是一个用于实现各种机器学习算法预测的GUI框架，可以使用各种机器学习算法对数据进行预测，支持常见的回归、分类、聚类和降维算法。该项目使用 PyQt5 框架和 Python 语言编写，具有以下主要功能：</p>
-<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul>
-<li><p><strong>导入数据</strong>：用户可以将自己的数据导入到 GUI 中进行处理。</p>
-</li>
-<li><p><strong>归一化处理</strong>：用户可以选择是否对输入数据进行归一化处理，并提供了多种常见的数据归一化方法可供选择。</p>
-</li>
-<li><p><strong>数据划分</strong>：用户可以设置训练集和独立测试集的数据划分比例，并设置是否在划分训练集&#x2F;测试集之前将数据随机打乱以及设置随即种子保证每次划分的可重复性。</p>
-</li>
-<li><p><strong>选择算法</strong>：根据项目需求选择不同的机器学习算法，包括回归、分类、聚类和降维等算法。</p>
-</li>
-<li><p><strong>修改超参数</strong>：用户可以修改机器学习模型的超参数，以达到更好的预测效果。</p>
-</li>
-<li><p><strong>交叉验证</strong>：用户可以选择是否进行交叉验证，提供了多种交叉验证方法，如：K折交叉验证、留一法交叉验证、留P法交叉验证、分层交叉验证等。</p>
-</li>
-<li><p><strong>CPU核心数</strong>：用户可以设置训练模型时使用的 CPU 核心数。</p>
-</li>
-<li><p><strong>保存模型</strong>：用户可以选择是否保存训练好的机器学习模型。</p>
-</li>
-<li><p><strong>预测结果分析</strong>：用户可以预览训练机器学习模型的预测结果数据和各种常见的预测得分指标，并对预测结果进行各种可视化绘图分析。</p>
-</li>
-</ul>
-<p>该项目旨在为机器学习初学者和专业人士提供一个强大的工具，帮助他们快速轻松地实现机器学习模型，并分析和优化模型性能。</p>
-<h2 id="依赖条件"><a href="#依赖条件" class="headerlink" title="依赖条件"></a>依赖条件</h2><ul>
-<li><p>Python 3.x</p>
-</li>
-<li><p>Python包依赖请参见 requirements.txt 文件</p>
-</li>
-</ul>
-<h2 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h2><p>项目中的文件结构应该是这样：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Machine-Learning-Toolkit</span><br><span class="line">├── __pycache__：Python编译后自动生成的文件夹</span><br><span class="line">├── databases：数据文件夹，用于存放导入的数据文件</span><br><span class="line">├── figures：图表文件夹，用于存放生成的图表</span><br><span class="line">├── icon：图标文件夹，存放软件图标</span><br><span class="line">├── model：模型文件夹，存放训练好的模型文件</span><br><span class="line">├── ML_GUI.ui：PyQt5设计的GUI界面文件</span><br><span class="line">├── Ui_ML_GUI.py：通过PyQt5将ML_GUI.ui转化为python代码生成的文件</span><br><span class="line">├── main.py：主程序文件</span><br><span class="line">├── requirements.txt：Python环境依赖库文件</span><br><span class="line">├── README.md：项目介绍文件（英文）</span><br><span class="line">├── README-zh.md：项目介绍文件（中文）</span><br><span class="line">└── LICENSE：MIT许可证文件</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li><p>克隆仓库到本地：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/yourusername/Machine-Learning-Toolkit.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入项目目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Machine-Learning-Toolkit</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装依赖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行项目：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python main.py</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
-<li><p><strong>导入数据</strong>：点击导入数据按钮，选择要导入的数据文件。</p>
-</li>
-<li><p><strong>数据归一化</strong>：在数据归一化区域中选择是否对输入数据进行归一化处理。</p>
-</li>
-<li><p><strong>随机打乱数据</strong>：在数据划分区域中选择是否在划分训练集&#x2F;测试集之前将数据随机打乱，设置随机种子保证每次划分的可重复性，点击运行按钮即可。</p>
-</li>
-<li><p><strong>设置数据划分比例</strong>：在数据划分区域中设置训练集和测试集的数据划分比例，点击运行按钮即可。</p>
-</li>
-<li><p><strong>选择算法</strong>：在算法选择区域中选择想要使用的算法，点击运行按钮即可。</p>
-</li>
-<li><p><strong>修改超参数</strong>：在超参数区域中修改超参数，点击运行按钮即可。</p>
-</li>
-<li><p><strong>保存模型</strong>：在保存模型区域中选择是否保存模型，选择保存路径，点击运行按钮即可。</p>
-</li>
-<li><p><strong>查看结果</strong>：在预测结果窗口中可以看到源数据和预测数据以及各项预测评估指标。</p>
-</li>
-</ol>
-<h2 id="贡献者"><a href="#贡献者" class="headerlink" title="贡献者"></a>贡献者</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.x-mol.com/groups/flygroup/people/18563">Yihang Li</a></li>
-</ul>
-<p>我们非常欢迎您为该项目做出贡献。如果您发现了任何问题或有任何建议，请在 Issues 中提交问题或 Pull Request 进行更改。</p>
-<h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>该项目基于 MIT 许可证 发布，允许任何人使用、复制、修改、合并、出版、分发、再许可和&#x2F;或销售本软件的副本，但需遵守以下条件：</p>
-<ul>
-<li>在软件和文档中包含版权声明和许可声明。</li>
-<li>在所有的副本中都包含上述版权声明和许可声明。</li>
-<li>不得使用作者的名字、商标或其他形式的认可来促销或推广本软件。</li>
-</ul>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>我们感谢以下开源项目和库，它们对该项目的开发和实现提供了帮助和支持：</p>
-<ul>
-<li><p>Pyqt5</p>
-</li>
-<li><p>Pandas</p>
-</li>
-<li><p>Scikit-learn</p>
-</li>
-<li><p>Matplotlib</p>
-</li>
-</ul>
-<p>如果您喜欢该项目，请给我们一个star支持，谢谢！</p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -902,9 +664,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-07 20:17:26 / 修改时间：20:08:51" itemprop="dateCreated datePublished" datetime="2023-11-07T20:17:26+08:00">2023-11-07</time>
+      <time title="创建时间：2023-11-07 20:17:26" itemprop="dateCreated datePublished" datetime="2023-11-07T20:17:26+08:00">2023-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-08 11:09:03" itemprop="dateModified" datetime="2023-11-08T11:09:03+08:00">2023-11-08</time>
     </span>
 
   
@@ -917,20 +685,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/11/07/hello-world/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -985,7 +748,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
 
 
 
