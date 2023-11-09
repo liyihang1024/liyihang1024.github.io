@@ -20,31 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"liyihang1024.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="机器学习入门教程1. 机器学习简介机器学习是人工智能的一个分支，它使计算机能够从数据中学习并作出决策或预测。它涉及从历史数据中发现模式并基于这些模式来预测未来或进行其他类型的决策。">
+    <meta name="description" content="在第一性原理计算过程中，研究体系的稳定性是经常遇到的一个问题，我们可以从很多方面来解释，其中可以使用声子谱研究体系的动力学稳定性。 在固体理论中，声子是晶格振动的简正模能量量子，声子用来描述晶格的简谐振动。在量子力学中，固体内存在原子核之间的相互作用、电子间的相互作用还有原子核与电子间的相互作用。其中，电子的运动规律用密度泛函理论得到，而原子核的运动规律则用声子来描述。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习入门教程">
-<meta property="og:url" content="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="VASP+Phonopy计算声子谱">
+<meta property="og:url" content="https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/index.html">
 <meta property="og:site_name" content="Liyihang&#39;s Blog">
-<meta property="og:description" content="机器学习入门教程1. 机器学习简介机器学习是人工智能的一个分支，它使计算机能够从数据中学习并作出决策或预测。它涉及从历史数据中发现模式并基于这些模式来预测未来或进行其他类型的决策。">
+<meta property="og:description" content="在第一性原理计算过程中，研究体系的稳定性是经常遇到的一个问题，我们可以从很多方面来解释，其中可以使用声子谱研究体系的动力学稳定性。 在固体理论中，声子是晶格振动的简正模能量量子，声子用来描述晶格的简谐振动。在量子力学中，固体内存在原子核之间的相互作用、电子间的相互作用还有原子核与电子间的相互作用。其中，电子的运动规律用密度泛函理论得到，而原子核的运动规律则用声子来描述。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/jiandu.png">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ML.jpg">
-<meta property="article:published_time" content="2023-11-08T09:01:54.000Z">
-<meta property="article:modified_time" content="2023-11-09T06:25:47.000Z">
+<meta property="og:image" content="https://liyihang1024.github.io/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png">
+<meta property="article:published_time" content="2023-11-09T06:37:35.000Z">
+<meta property="article:modified_time" content="2023-11-09T07:03:24.612Z">
 <meta property="article:author" content="Liyihang">
-<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://liyihang1024.github.io/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/jiandu.png">
+<meta name="twitter:image" content="https://liyihang1024.github.io/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png">
 
 
-<link rel="canonical" href="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+<link rel="canonical" href="https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/","path":"2023/11/08/机器学习入门教程/","title":"机器学习入门教程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/","path":"2023/11/09/VASP-Phonopy计算声子谱/","title":"VASP+Phonopy计算声子谱"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>机器学习入门教程 | Liyihang's Blog</title>
+<title>VASP+Phonopy计算声子谱 | Liyihang's Blog</title>
   
 
 
@@ -146,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B"><span class="nav-text">机器学习入门教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B"><span class="nav-text">1. 机器学习简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.1 机器学习的类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">2. 数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="nav-text">2.1 数据清洗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B"><span class="nav-text">2.2 特征工程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%80%89%E6%8B%A9%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-text">3. 选择机器学习算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="nav-text">4. 训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="nav-text">5. 模型评估与优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2"><span class="nav-text">6. 模型部署</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9C%89%E9%99%90%E4%BD%8D%E7%A7%BB%E6%B3%95%EF%BC%8C%E6%88%96%E7%A7%B0Finite-displacement%E6%96%B9%E6%B3%95"><span class="nav-text">1.有限位移法，或称Finite displacement方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AF%86%E5%BA%A6%E6%B3%9B%E5%87%BD%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA"><span class="nav-text">2.密度泛函微扰理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%AC%AC%E4%B8%80%E6%AD%A5%E9%9C%80%E8%A6%81%E7%94%A8%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%BC%98%E5%8C%96%E7%BB%93%E6%9E%84%EF%BC%8C%E4%BC%98%E5%8C%96%E5%AE%8C%E4%B9%8B%E5%90%8E%E5%B0%86CONTCAR%E5%A4%8D%E5%88%B6%E4%B8%BAPOSCAR%E8%BF%9B%E8%A1%8C%E4%B8%8B%E4%B8%80%E6%AD%A5%E6%93%8D%E4%BD%9C%E3%80%82"><span class="nav-text">1.第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%A9%E7%94%A8Phonopy%E8%BD%AF%E4%BB%B6%E5%AF%B9%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%BC%98%E5%8C%96%E4%B9%8B%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%84%E8%BF%9B%E8%A1%8C%E6%89%A9%E8%83%9E%E3%80%82"><span class="nav-text">2.利用Phonopy软件对高精度优化之后的结构进行扩胞。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%B0%86%E6%89%A7%E8%A1%8C%E4%B8%8A%E8%BF%B0-%E5%91%BD%E4%BB%A4%E6%89%A9%E8%83%9E%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%91%BD%E5%90%8D%E3%80%82"><span class="nav-text">3.将执行上述 命令扩胞后生成的文件进行重命名。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%AF%B9INCAR%E8%BF%9B%E8%A1%8C%E4%BB%A5%E4%B8%8B%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%8F%90%E4%BA%A4%E4%BB%BB%E5%8A%A1%E8%AE%A1%E7%AE%97%E5%8A%9B%E5%AD%A6Hessian%E7%9F%A9%E9%98%B5%E3%80%82"><span class="nav-text">4.对INCAR进行以下设置，提交任务计算力学Hessian矩阵。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E8%AE%A1%E7%AE%97%E5%AE%8C%E6%88%90%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%8C%E6%A0%B9%E6%8D%AEVASP%E8%AE%A1%E7%AE%97%E7%9A%84vasprun-xml%E6%96%87%E4%BB%B6%E6%9D%A5%E7%94%9F%E6%88%90%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1%E6%89%80%E9%9C%80%E7%9A%84%E5%8A%9B%E5%AD%A6%E6%96%87%E4%BB%B6FORCE-CONSTRAINS%E3%80%82"><span class="nav-text">5.计算完成后执行以下命令，根据VASP计算的vasprun.xml文件来生成计算声子谱所需的力学文件FORCE_CONSTRAINS。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E7%BC%96%E8%BE%91band-conf%E6%96%87%E4%BB%B6%EF%BC%88%E8%8B%A5%E6%B2%A1%E6%9C%89%E6%94%B9%E6%96%87%E4%BB%B6%EF%BC%8C%E5%88%99%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%EF%BC%89%EF%BC%8C%E8%AF%A5%E6%96%87%E4%BB%B6%E7%BB%99%E5%87%BA%E4%BA%86%E9%AB%98%E5%AF%B9%E7%A7%B0%E7%82%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E4%BF%A1%E6%81%AF%E3%80%82"><span class="nav-text">6.编辑band.conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E6%9D%A5%E7%94%9F%E6%88%90band-yaml%E6%96%87%E4%BB%B6"><span class="nav-text">7.执行以下命令来生成band.yaml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%BE%97%E5%88%B0%E5%A3%B0%E5%AD%90%E8%B0%B1%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6PBAND-dat%E3%80%82"><span class="nav-text">8.执行以下命令得到声子谱数据文件PBAND.dat。</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -216,7 +214,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/shushu.jpg">
@@ -229,12 +227,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="机器学习入门教程 | Liyihang's Blog">
+      <meta itemprop="name" content="VASP+Phonopy计算声子谱 | Liyihang's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          机器学习入门教程
+          VASP+Phonopy计算声子谱
         </h1>
 
         <div class="post-meta-container">
@@ -244,24 +242,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-11-08 17:01:54" itemprop="dateCreated datePublished" datetime="2023-11-08T17:01:54+08:00">2023-11-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-09 14:25:47" itemprop="dateModified" datetime="2023-11-09T14:25:47+08:00">2023-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
-        </span>
+      <time title="创建时间：2023-11-09 14:37:35 / 修改时间：15:03:24" itemprop="dateCreated datePublished" datetime="2023-11-09T14:37:35+08:00">2023-11-09</time>
     </span>
 
   
@@ -278,7 +261,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>581</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -295,36 +278,34 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="机器学习入门教程"><a href="#机器学习入门教程" class="headerlink" title="机器学习入门教程"></a>机器学习入门教程</h1><h2 id="1-机器学习简介"><a href="#1-机器学习简介" class="headerlink" title="1. 机器学习简介"></a>1. 机器学习简介</h2><p>机器学习是人工智能的一个分支，它使计算机能够从数据中学习并作出决策或预测。它涉及从历史数据中发现模式并基于这些模式来预测未来或进行其他类型的决策。</p>
+    <div class="post-body" itemprop="articleBody"><p>在第一性原理计算过程中，研究体系的稳定性是经常遇到的一个问题，我们可以从很多方面来解释，其中可以使用声子谱研究体系的动力学稳定性。</p>
+<p>在固体理论中，声子是晶格振动的简正模能量量子，声子用来描述晶格的简谐振动。在量子力学中，固体内存在原子核之间的相互作用、电子间的相互作用还有原子核与电子间的相互作用。其中，电子的运动规律用密度泛函理论得到，而原子核的运动规律则用声子来描述。</p>
 <span id="more"></span>
-<h3 id="1-1-机器学习的类型"><a href="#1-1-机器学习的类型" class="headerlink" title="1.1 机器学习的类型"></a>1.1 机器学习的类型</h3><ul>
-<li><strong>监督学习（Supervised Learning）</strong>: 模型从标记的训练数据中学习，以预测新数据的输出。</li>
-<li><strong>无监督学习（Unsupervised Learning）</strong>: 模型在没有标记的数据上寻找模式。</li>
-<li><strong>半监督学习（Semi-Supervised Learning）</strong>: 结合少量标记数据和大量未标记数据。</li>
-<li><strong>强化学习（Reinforcement Learning）</strong>: 模型通过与环境的交互来学习行为。</li>
-</ul>
-<p><img src="/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/jiandu.png" alt="Machine Learning Types"></p>
-<h2 id="2-数据预处理"><a href="#2-数据预处理" class="headerlink" title="2. 数据预处理"></a>2. 数据预处理</h2><p>在训练模型之前，通常需要对数据进行预处理。</p>
-<h3 id="2-1-数据清洗"><a href="#2-1-数据清洗" class="headerlink" title="2.1 数据清洗"></a>2.1 数据清洗</h3><ul>
-<li><strong>缺失值处理</strong>: 填补或删除缺失数据。</li>
-<li><strong>异常值处理</strong>: 识别和处理异常值。</li>
-</ul>
-<h3 id="2-2-特征工程"><a href="#2-2-特征工程" class="headerlink" title="2.2 特征工程"></a>2.2 特征工程</h3><ul>
-<li><strong>特征选择</strong>: 选择最重要的特征来训练模型。</li>
-<li><strong>特征缩放</strong>: 如标准化或归一化。</li>
-</ul>
-<h2 id="3-选择机器学习算法"><a href="#3-选择机器学习算法" class="headerlink" title="3. 选择机器学习算法"></a>3. 选择机器学习算法</h2><p>根据问题类型和数据特性选择合适的算法。例如：</p>
-<ul>
-<li><strong>线性回归</strong>: 用于连续值预测。</li>
-<li><strong>逻辑回归</strong>: 用于二分类问题。</li>
-<li><strong>决策树</strong>: 适用于分类和回归问题。</li>
-<li><strong>随机森林</strong>: 一种强大的集成方法。</li>
-<li><strong>神经网络</strong>: 处理复杂的模式识别。</li>
-</ul>
-<p><img src="/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ML.jpg" alt="Machine Learning Types"></p>
-<h2 id="4-训练模型"><a href="#4-训练模型" class="headerlink" title="4. 训练模型"></a>4. 训练模型</h2><p>使用选定的算法和准备好的数据来训练模型。</p>
-<h2 id="5-模型评估与优化"><a href="#5-模型评估与优化" class="headerlink" title="5. 模型评估与优化"></a>5. 模型评估与优化</h2><p>评估模型的性能，并根据需要进行调整。</p>
-<h2 id="6-模型部署"><a href="#6-模型部署" class="headerlink" title="6. 模型部署"></a>6. 模型部署</h2><p>训练完成的模型可以被部署到生产环境中，用于实际的预测任务。</p>
+
+<p>目前，声子谱是研究材料热力学性质的一个很好的切入点，对于三维块体材料，声子谱分光学波（高）和声学波频率（低），当声子谱全部在0点以上，说明材料没有出现虚频，也就是说材料是相对稳定存在的。</p>
+<p>那么，如何计算声子谱是我们关注的重点。目前计算声子谱的方法有两种，分别是直接法即有限位移法和密度泛函微扰理论。</p>
+<h2 id="1-有限位移法，或称Finite-displacement方法"><a href="#1-有限位移法，或称Finite-displacement方法" class="headerlink" title="1.有限位移法，或称Finite displacement方法"></a>1.有限位移法，或称Finite displacement方法</h2><p>通过在优化后的平衡结构中引入原子位移，计算作用在原子上的Hellmann-Feynman力，进而由动力学矩阵算出声子色散曲线。</p>
+<h2 id="2-密度泛函微扰理论"><a href="#2-密度泛函微扰理论" class="headerlink" title="2.密度泛函微扰理论"></a>2.密度泛函微扰理论</h2><p>密度泛函微扰理论或称DFPT，通过计算系统能量对外场微扰的响应来求出晶格动力学性质，直接计算出原子的移动而导致的势场变化，再进一步构造出动力学矩阵，进而算出声子谱。</p>
+<hr>
+<p>这两种方法的计算方式略有不同，今天我们简单描述通过VASP运用有限位移法怎么计算声子谱，以SiO2-HP为例，详细参考官网（VASP &amp; phonopy calculation — Phonopy v.2.12.0），具体操作如下：</p>
+<h4 id="1-第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。"><a href="#1-第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。" class="headerlink" title="1.第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。"></a>1.第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> CONTCAR POSCAR</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-利用Phonopy软件对高精度优化之后的结构进行扩胞。"><a href="#2-利用Phonopy软件对高精度优化之后的结构进行扩胞。" class="headerlink" title="2.利用Phonopy软件对高精度优化之后的结构进行扩胞。"></a>2.利用Phonopy软件对高精度优化之后的结构进行扩胞。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy -d --dim=<span class="string">&quot;4 4 1&quot;</span>  <span class="comment"># 按照自己的要求扩胞</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-将执行上述-命令扩胞后生成的文件进行重命名。"><a href="#3-将执行上述-命令扩胞后生成的文件进行重命名。" class="headerlink" title="3.将执行上述 命令扩胞后生成的文件进行重命名。"></a>3.将执行上述 命令扩胞后生成的文件进行重命名。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> POSCAR POSCAR-unitcell</span><br><span class="line"><span class="built_in">mv</span> SPOSCAR POSCAR</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-对INCAR进行以下设置，提交任务计算力学Hessian矩阵。"><a href="#4-对INCAR进行以下设置，提交任务计算力学Hessian矩阵。" class="headerlink" title="4.对INCAR进行以下设置，提交任务计算力学Hessian矩阵。"></a>4.对INCAR进行以下设置，提交任务计算力学Hessian矩阵。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IBRION = 8 </span><br><span class="line">NSW = 1 </span><br><span class="line">IALGO = 38 </span><br></pre></td></tr></table></figure>
+
+<h4 id="5-计算完成后执行以下命令，根据VASP计算的vasprun-xml文件来生成计算声子谱所需的力学文件FORCE-CONSTRAINS。"><a href="#5-计算完成后执行以下命令，根据VASP计算的vasprun-xml文件来生成计算声子谱所需的力学文件FORCE-CONSTRAINS。" class="headerlink" title="5.计算完成后执行以下命令，根据VASP计算的vasprun.xml文件来生成计算声子谱所需的力学文件FORCE_CONSTRAINS。"></a>5.计算完成后执行以下命令，根据VASP计算的vasprun.xml文件来生成计算声子谱所需的力学文件FORCE_CONSTRAINS。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --<span class="built_in">fc</span> vasprun.xml</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-编辑band-conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。"><a href="#6-编辑band-conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。" class="headerlink" title="6.编辑band.conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。"></a>6.编辑band.conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ATOM_NAME = In Se</span><br><span class="line">DIM = 4 4 1</span><br><span class="line">BAND = 0.5 0.0 0.0   0.0 0.0 0.0    0.5 0.0 0.0</span><br><span class="line">FORCE_CONSTANTS = READ</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-执行以下命令来生成band-yaml文件"><a href="#7-执行以下命令来生成band-yaml文件" class="headerlink" title="7.执行以下命令来生成band.yaml文件"></a>7.执行以下命令来生成band.yaml文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --dim=<span class="string">&quot;5 5 1&quot;</span> -c POSCAR-unitcell -p -s band.conf</span><br></pre></td></tr></table></figure>
+
+<p>命令正确执行后会生成phonopy.yaml、band.yaml和band.pdf文件</p>
+<h4 id="8-执行以下命令得到声子谱数据文件PBAND-dat。"><a href="#8-执行以下命令得到声子谱数据文件PBAND-dat。" class="headerlink" title="8.执行以下命令得到声子谱数据文件PBAND.dat。"></a>8.执行以下命令得到声子谱数据文件PBAND.dat。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy-bandplot --gnuplot &gt; PBAND.dat   <span class="comment"># 可导入Origin画图</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png" alt="声子谱"></p>
 
     </div>
 
@@ -360,7 +341,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="机器学习入门教程">https://liyihang1024.github.io/2023/11/08/机器学习入门教程/</a>
+      <a href="https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/" title="VASP+Phonopy计算声子谱">https://liyihang1024.github.io/2023/11/09/VASP-Phonopy计算声子谱/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -385,9 +366,6 @@
   </div>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
-          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -399,14 +377,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="prev" title="我的第一篇博客文章">
-                  <i class="fa fa-angle-left"></i> 我的第一篇博客文章
+                <a href="/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" rel="prev" title="机器学习入门教程">
+                  <i class="fa fa-angle-left"></i> 机器学习入门教程
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/" rel="next" title="VASP+Phonopy计算声子谱">
-                  VASP+Phonopy计算声子谱 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
