@@ -6,7 +6,7 @@
   <link href="https://liyihang1024.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyihang1024.github.io/"/>
-  <updated>2023-11-09T07:03:24.612Z</updated>
+  <updated>2023-11-09T09:08:06.920Z</updated>
   <id>https://liyihang1024.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生活</title>
+    <link href="https://liyihang1024.github.io/2023/11/09/%E7%94%9F%E6%B4%BB/"/>
+    <id>https://liyihang1024.github.io/2023/11/09/%E7%94%9F%E6%B4%BB/</id>
+    <published>2023-11-09T08:40:51.000Z</published>
+    <updated>2023-11-09T09:08:06.920Z</updated>
+    
+    <content type="html"><![CDATA[<p>生活不能等待别人来安排，要自己去争取和奋斗；而不论其结果是喜是悲，但可以慰藉的是，你总不枉在这世界上活了一场。有了这样的认识，你就会珍重生活，而不会玩世不恭；同时，也会给人自身注入一种强大的内在力量。</p><p>——路遥《平凡的世界》</p><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;生活不能等待别人来安排，要自己去争取和奋斗；而不论其结果是喜是悲，但可以慰藉的是，你总不枉在这世界上活了一场。有了这样的认识，你就会珍重生活，而不会玩世不恭；同时，也会给人自身注入一种强大的内在力量。&lt;/p&gt;
+&lt;p&gt;——路遥《平凡的世界》&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="点滴" scheme="https://liyihang1024.github.io/categories/%E7%82%B9%E6%BB%B4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>VASP+Phonopy计算声子谱</title>
