@@ -32,6 +32,15 @@
 
 <p><img src="/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png" alt="声子谱"></p>
 ]]></content>
+      <categories>
+        <category>理论计算</category>
+        <category>DFT</category>
+      </categories>
+      <tags>
+        <tag>VASP</tag>
+        <tag>Phonopy</tag>
+        <tag>声子谱</tag>
+      </tags>
   </entry>
   <entry>
     <title>我的第一篇博客文章</title>
@@ -106,5 +115,27 @@
       <categories>
         <category>点滴</category>
       </categories>
+  </entry>
+  <entry>
+    <title>VESTA模拟XRD图谱</title>
+    <url>/2023/11/10/VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/</url>
+    <content><![CDATA[<p>📢 VESTA（Visualization for Electronic and STructural Analysis）是一款强大的晶体结构可视化软件，可用于模拟X射线衍射（XRD）图谱。XRD是一种用于分析材料晶体结构的重要技术，通过测量不同晶面的衍射角度和强度，可以得到材料的晶体信息。</p>
+<span id="more"></span>
+
+<p>📢 模拟XRD谱图的办法有很多，包括diamond、mercury、highscore、predict、materials project、MS等等，之后我们会逐个介绍，今天介绍第一种办法：VESTA：</p>
+<h4 id="1-点击file-open打开晶体学文件，cif或者ins都可"><a href="#1-点击file-open打开晶体学文件，cif或者ins都可" class="headerlink" title="1.点击file-open打开晶体学文件，cif或者ins都可:"></a>1.点击file-open打开晶体学文件，cif或者ins都可:</h4><p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/11.png" alt="11.png"></p>
+<h4 id="2-点击Utilities→Power-Diffraction-Pattern，打开XRD模拟界面："><a href="#2-点击Utilities→Power-Diffraction-Pattern，打开XRD模拟界面：" class="headerlink" title="2.点击Utilities→Power Diffraction Pattern，打开XRD模拟界面："></a>2.点击Utilities→Power Diffraction Pattern，打开XRD模拟界面：</h4><p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/33.png" alt="33.png"></p>
+<h4 id="3-设置好参数Calculate即可在Plot框内看到模拟衍射图，点击Conditions设置靶材，铜靶选择1-54，其他靶材更具波长进行相应的设置"><a href="#3-设置好参数Calculate即可在Plot框内看到模拟衍射图，点击Conditions设置靶材，铜靶选择1-54，其他靶材更具波长进行相应的设置" class="headerlink" title="3.设置好参数Calculate即可在Plot框内看到模拟衍射图，点击Conditions设置靶材，铜靶选择1.54，其他靶材更具波长进行相应的设置:"></a>3.设置好参数Calculate即可在Plot框内看到模拟衍射图，点击Conditions设置靶材，铜靶选择1.54，其他靶材更具波长进行相应的设置:</h4><p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/44.png" alt="44.png"></p>
+<h4 id="4-填好后，点击Calculate；在Reflections可以看到每个晶面的信息，Plot显示整个模拟衍射图"><a href="#4-填好后，点击Calculate；在Reflections可以看到每个晶面的信息，Plot显示整个模拟衍射图" class="headerlink" title="4.填好后，点击Calculate；在Reflections可以看到每个晶面的信息，Plot显示整个模拟衍射图:"></a>4.填好后，点击Calculate；在Reflections可以看到每个晶面的信息，Plot显示整个模拟衍射图:</h4><p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/55.png" alt="55.png"></p>
+<p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/66.png" alt="66.png"></p>
+<h4 id="5-点击file即可保存模拟衍射的数据，保存有两种模式可以选择，Export-Reflection-Table保存为数据点格式，Export-Data可以转为-xy用直接晶体学软件打开"><a href="#5-点击file即可保存模拟衍射的数据，保存有两种模式可以选择，Export-Reflection-Table保存为数据点格式，Export-Data可以转为-xy用直接晶体学软件打开" class="headerlink" title="5.点击file即可保存模拟衍射的数据，保存有两种模式可以选择，Export Reflection Table保存为数据点格式，Export Data可以转为.xy用直接晶体学软件打开:"></a>5.点击file即可保存模拟衍射的数据，保存有两种模式可以选择，Export Reflection Table保存为数据点格式，Export Data可以转为.xy用直接晶体学软件打开:</h4><p><img src="/images/20231110-VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/77.png" alt="77.png"></p>
+]]></content>
+      <categories>
+        <category>理论计算</category>
+      </categories>
+      <tags>
+        <tag>VESTA</tag>
+        <tag>XRD</tag>
+      </tags>
   </entry>
 </search>
