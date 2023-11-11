@@ -6,7 +6,7 @@
   <link href="https://liyihang1024.github.io/atom.xml" rel="self"/>
   
   <link href="https://liyihang1024.github.io/"/>
-  <updated>2023-11-11T07:17:56.291Z</updated>
+  <updated>2023-11-11T08:55:31.324Z</updated>
   <id>https://liyihang1024.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个好玩的元素周期表</title>
+    <link href="https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/"/>
+    <id>https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/</id>
+    <published>2023-11-11T08:51:20.000Z</published>
+    <updated>2023-11-11T08:55:31.324Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><style><br> .iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}<br>    .iframe-body-sty&gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}</style></p><p><div class="iframe-body-sty"> <iframe id="iframe-shrink" src="https://sfo1.jfjf233.me/" width="1100px" height="720px"></iframe></div><br><span id="more"></span></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;style&gt;&lt;br&gt; .iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}&lt;br&gt;    .iframe-body-sty&amp;gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}
+&lt;/style&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;iframe-body-sty&quot;&gt;
+ &lt;iframe id=&quot;iframe-shrink&quot; src=&quot;https://sfo1.jfjf233.me/&quot; width=&quot;1100px&quot; height=&quot;720px&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="好玩" scheme="https://liyihang1024.github.io/categories/%E5%A5%BD%E7%8E%A9/"/>
+    
+    
+    <category term="元素周期表" scheme="https://liyihang1024.github.io/tags/%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>析氧反应（OER）机理</title>

@@ -945,4 +945,20 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>一个好玩的元素周期表</title>
+    <url>/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><style><br> .iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}<br>    .iframe-body-sty&gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}
+</style></p>
+<p><div class="iframe-body-sty">
+ <iframe id="iframe-shrink" src="https://sfo1.jfjf233.me/" width="1100px" height="720px"></iframe>
+</div><br><span id="more"></span></p>
+]]></content>
+      <categories>
+        <category>好玩</category>
+      </categories>
+      <tags>
+        <tag>元素周期表</tag>
+      </tags>
+  </entry>
 </search>
