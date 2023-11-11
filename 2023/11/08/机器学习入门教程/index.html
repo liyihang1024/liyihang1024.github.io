@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
@@ -24,11 +27,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习入门教程">
 <meta property="og:url" content="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html">
-<meta property="og:site_name" content="Liyihang&#39;s Blog">
+<meta property="og:site_name" content="一一风荷举">
 <meta property="og:description" content="机器学习入门教程1. 机器学习简介机器学习是人工智能的一个分支，它使计算机能够从数据中学习并作出决策或预测。它涉及从历史数据中发现模式并基于这些模式来预测未来或进行其他类型的决策。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://liyihang1024.github.io/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/jiandu.png">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ML.jpg">
+<meta property="og:image" content="https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ML.jpg">
 <meta property="article:published_time" content="2023-11-08T09:01:54.000Z">
 <meta property="article:modified_time" content="2023-11-09T06:25:47.000Z">
 <meta property="article:author" content="Liyihang">
@@ -44,7 +47,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/","path":"2023/11/08/机器学习入门教程/","title":"机器学习入门教程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>机器学习入门教程 | Liyihang's Blog</title>
+<title>机器学习入门教程 | 一一风荷举</title>
   
 
 
@@ -57,7 +60,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="alternate" href="/atom.xml" title="Liyihang's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="一一风荷举" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -78,11 +81,11 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">Liyihang's Blog</p>
+      <p class="site-title">一一风荷举</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">Action speak louder than words!</p>
-      <img class="custom-logo-image" src="/images/logo/giphy.gif" alt="Liyihang's Blog">
+      <p class="site-subtitle" itemprop="description">怕黑就开灯，想念就联系。</p>
+      <img class="custom-logo-image" src="/images/logo/giphy.gif" alt="一一风荷举">
   </div>
 
   <div class="site-nav-right">
@@ -95,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-点滴"><a href="/categories/%E7%82%B9%E6%BB%B4/" rel="section"><i class="fa fa-clipboard fa-fw"></i>点滴</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li><li class="menu-item menu-item-点滴"><a href="/categories/%E7%82%B9%E6%BB%B4/" rel="section"><i class="fa fa-clipboard fa-fw"></i>点滴</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -161,18 +164,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -196,6 +199,28 @@
   </div>
 
         </div>
+
+        <!--网易云-->
+        <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>    
+        <div class="aplayer" 
+          data-id="7952911296" 
+          data-server="netease" 
+          data-type="playlist" 
+          data-fixed="false" 
+          data-autoplay="false" 
+          data-list-folded="true"
+          data-mutex="true"
+          data-order="random" 
+          data-loop="all"
+          data-volume="0.4" 
+          data-theme="#FADFA3" 
+          date-preload="auto" > 
+        </div>
+
       </div>
     </div>
 
@@ -224,12 +249,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liyihang's Blog">
+      <meta itemprop="name" content="一一风荷举">
       <meta itemprop="description" content="从童年起，我便独自一人，照顾着历代的星辰。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="机器学习入门教程 | Liyihang's Blog">
+      <meta itemprop="name" content="机器学习入门教程 | 一一风荷举">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -303,7 +328,7 @@
 <li><strong>半监督学习（Semi-Supervised Learning）</strong>: 结合少量标记数据和大量未标记数据。</li>
 <li><strong>强化学习（Reinforcement Learning）</strong>: 模型通过与环境的交互来学习行为。</li>
 </ul>
-<p><img src="/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/jiandu.png" alt="Machine Learning Types"></p>
+<p><img src="/images/20231108-机器学习入门教程/jiandu.png" alt="Machine Learning Types"></p>
 <h2 id="2-数据预处理"><a href="#2-数据预处理" class="headerlink" title="2. 数据预处理"></a>2. 数据预处理</h2><p>在训练模型之前，通常需要对数据进行预处理。</p>
 <h3 id="2-1-数据清洗"><a href="#2-1-数据清洗" class="headerlink" title="2.1 数据清洗"></a>2.1 数据清洗</h3><ul>
 <li><strong>缺失值处理</strong>: 填补或删除缺失数据。</li>
@@ -321,7 +346,7 @@
 <li><strong>随机森林</strong>: 一种强大的集成方法。</li>
 <li><strong>神经网络</strong>: 处理复杂的模式识别。</li>
 </ul>
-<p><img src="/images/20231108-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ML.jpg" alt="Machine Learning Types"></p>
+<p><img src="images/20231108-机器学习入门教程/ML.jpg" alt="Machine Learning Types"></p>
 <h2 id="4-训练模型"><a href="#4-训练模型" class="headerlink" title="4. 训练模型"></a>4. 训练模型</h2><p>使用选定的算法和准备好的数据来训练模型。</p>
 <h2 id="5-模型评估与优化"><a href="#5-模型评估与优化" class="headerlink" title="5. 模型评估与优化"></a>5. 模型评估与优化</h2><p>评估模型的性能，并根据需要进行调整。</p>
 <h2 id="6-模型部署"><a href="#6-模型部署" class="headerlink" title="6. 模型部署"></a>6. 模型部署</h2><p>训练完成的模型可以被部署到生产环境中，用于实际的预测任务。</p>
@@ -459,8 +484,9 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
@@ -474,9 +500,15 @@
   <script src="/js/third-party/addtoany.js"></script>
 
   
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 

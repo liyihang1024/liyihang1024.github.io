@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
@@ -24,7 +27,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="VASP+Phonopy计算声子谱">
 <meta property="og:url" content="https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/index.html">
-<meta property="og:site_name" content="Liyihang&#39;s Blog">
+<meta property="og:site_name" content="一一风荷举">
 <meta property="og:description" content="在第一性原理计算过程中，研究体系的稳定性是经常遇到的一个问题，我们可以从很多方面来解释，其中可以使用声子谱研究体系的动力学稳定性。 在固体理论中，声子是晶格振动的简正模能量量子，声子用来描述晶格的简谐振动。在量子力学中，固体内存在原子核之间的相互作用、电子间的相互作用还有原子核与电子间的相互作用。其中，电子的运动规律用密度泛函理论得到，而原子核的运动规律则用声子来描述。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://liyihang1024.github.io/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png">
@@ -45,7 +48,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/09/VASP-Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/","path":"2023/11/09/VASP-Phonopy计算声子谱/","title":"VASP+Phonopy计算声子谱"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>VASP+Phonopy计算声子谱 | Liyihang's Blog</title>
+<title>VASP+Phonopy计算声子谱 | 一一风荷举</title>
   
 
 
@@ -58,7 +61,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="alternate" href="/atom.xml" title="Liyihang's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="一一风荷举" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -79,11 +82,11 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">Liyihang's Blog</p>
+      <p class="site-title">一一风荷举</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">Action speak louder than words!</p>
-      <img class="custom-logo-image" src="/images/logo/giphy.gif" alt="Liyihang's Blog">
+      <p class="site-subtitle" itemprop="description">怕黑就开灯，想念就联系。</p>
+      <img class="custom-logo-image" src="/images/logo/giphy.gif" alt="一一风荷举">
   </div>
 
   <div class="site-nav-right">
@@ -96,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-点滴"><a href="/categories/%E7%82%B9%E6%BB%B4/" rel="section"><i class="fa fa-clipboard fa-fw"></i>点滴</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li><li class="menu-item menu-item-点滴"><a href="/categories/%E7%82%B9%E6%BB%B4/" rel="section"><i class="fa fa-clipboard fa-fw"></i>点滴</a></li><li class="menu-item menu-item-相册"><a href="/photos/" rel="section"><i class="fa fa-image fa-fw"></i>相册</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,18 +165,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -197,6 +200,28 @@
   </div>
 
         </div>
+
+        <!--网易云-->
+        <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+        <!-- require MetingJS-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>    
+        <div class="aplayer" 
+          data-id="7952911296" 
+          data-server="netease" 
+          data-type="playlist" 
+          data-fixed="false" 
+          data-autoplay="false" 
+          data-list-folded="true"
+          data-mutex="true"
+          data-order="random" 
+          data-loop="all"
+          data-volume="0.4" 
+          data-theme="#FADFA3" 
+          date-preload="auto" > 
+        </div>
+
       </div>
     </div>
 
@@ -225,12 +250,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liyihang's Blog">
+      <meta itemprop="name" content="一一风荷举">
       <meta itemprop="description" content="从童年起，我便独自一人，照顾着历代的星辰。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="VASP+Phonopy计算声子谱 | Liyihang's Blog">
+      <meta itemprop="name" content="VASP+Phonopy计算声子谱 | 一一风荷举">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -303,7 +328,6 @@
     <div class="post-body" itemprop="articleBody"><p>在第一性原理计算过程中，研究体系的稳定性是经常遇到的一个问题，我们可以从很多方面来解释，其中可以使用声子谱研究体系的动力学稳定性。</p>
 <p>在固体理论中，声子是晶格振动的简正模能量量子，声子用来描述晶格的简谐振动。在量子力学中，固体内存在原子核之间的相互作用、电子间的相互作用还有原子核与电子间的相互作用。其中，电子的运动规律用密度泛函理论得到，而原子核的运动规律则用声子来描述。</p>
 <span id="more"></span>
-
 <p>目前，声子谱是研究材料热力学性质的一个很好的切入点，对于三维块体材料，声子谱分光学波（高）和声学波频率（低），当声子谱全部在0点以上，说明材料没有出现虚频，也就是说材料是相对稳定存在的。</p>
 <p>那么，如何计算声子谱是我们关注的重点。目前计算声子谱的方法有两种，分别是直接法即有限位移法和密度泛函微扰理论。</p>
 <h2 id="1-有限位移法，或称Finite-displacement方法"><a href="#1-有限位移法，或称Finite-displacement方法" class="headerlink" title="1.有限位移法，或称Finite displacement方法"></a>1.有限位移法，或称Finite displacement方法</h2><p>通过在优化后的平衡结构中引入原子位移，计算作用在原子上的Hellmann-Feynman力，进而由动力学矩阵算出声子色散曲线。</p>
@@ -311,23 +335,15 @@
 <hr>
 <p>这两种方法的计算方式略有不同，今天我们简单描述通过VASP运用有限位移法怎么计算声子谱，以SiO2-HP为例，详细参考官网（VASP &amp; phonopy calculation — Phonopy v.2.12.0），具体操作如下：</p>
 <h4 id="1-第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。"><a href="#1-第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。" class="headerlink" title="1.第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。"></a>1.第一步需要用高精度优化结构，优化完之后将CONTCAR复制为POSCAR进行下一步操作。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> CONTCAR POSCAR</span><br></pre></td></tr></table></figure>
-
 <h4 id="2-利用Phonopy软件对高精度优化之后的结构进行扩胞。"><a href="#2-利用Phonopy软件对高精度优化之后的结构进行扩胞。" class="headerlink" title="2.利用Phonopy软件对高精度优化之后的结构进行扩胞。"></a>2.利用Phonopy软件对高精度优化之后的结构进行扩胞。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy -d --dim=<span class="string">&quot;4 4 1&quot;</span>  <span class="comment"># 按照自己的要求扩胞</span></span><br></pre></td></tr></table></figure>
-
 <h4 id="3-将执行上述-命令扩胞后生成的文件进行重命名。"><a href="#3-将执行上述-命令扩胞后生成的文件进行重命名。" class="headerlink" title="3.将执行上述 命令扩胞后生成的文件进行重命名。"></a>3.将执行上述 命令扩胞后生成的文件进行重命名。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> POSCAR POSCAR-unitcell</span><br><span class="line"><span class="built_in">mv</span> SPOSCAR POSCAR</span><br></pre></td></tr></table></figure>
-
 <h4 id="4-对INCAR进行以下设置，提交任务计算力学Hessian矩阵。"><a href="#4-对INCAR进行以下设置，提交任务计算力学Hessian矩阵。" class="headerlink" title="4.对INCAR进行以下设置，提交任务计算力学Hessian矩阵。"></a>4.对INCAR进行以下设置，提交任务计算力学Hessian矩阵。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IBRION = 8 </span><br><span class="line">NSW = 1 </span><br><span class="line">IALGO = 38 </span><br></pre></td></tr></table></figure>
-
 <h4 id="5-计算完成后执行以下命令，根据VASP计算的vasprun-xml文件来生成计算声子谱所需的力学文件FORCE-CONSTRAINS。"><a href="#5-计算完成后执行以下命令，根据VASP计算的vasprun-xml文件来生成计算声子谱所需的力学文件FORCE-CONSTRAINS。" class="headerlink" title="5.计算完成后执行以下命令，根据VASP计算的vasprun.xml文件来生成计算声子谱所需的力学文件FORCE_CONSTRAINS。"></a>5.计算完成后执行以下命令，根据VASP计算的vasprun.xml文件来生成计算声子谱所需的力学文件FORCE_CONSTRAINS。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --<span class="built_in">fc</span> vasprun.xml</span><br></pre></td></tr></table></figure>
-
 <h4 id="6-编辑band-conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。"><a href="#6-编辑band-conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。" class="headerlink" title="6.编辑band.conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。"></a>6.编辑band.conf文件（若没有改文件，则新建一个），该文件给出了高对称点路径的信息。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ATOM_NAME = In Se</span><br><span class="line">DIM = 4 4 1</span><br><span class="line">BAND = 0.5 0.0 0.0   0.0 0.0 0.0    0.5 0.0 0.0</span><br><span class="line">FORCE_CONSTANTS = READ</span><br></pre></td></tr></table></figure>
-
 <h4 id="7-执行以下命令来生成band-yaml文件"><a href="#7-执行以下命令来生成band-yaml文件" class="headerlink" title="7.执行以下命令来生成band.yaml文件"></a>7.执行以下命令来生成band.yaml文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --dim=<span class="string">&quot;5 5 1&quot;</span> -c POSCAR-unitcell -p -s band.conf</span><br></pre></td></tr></table></figure>
-
 <p>命令正确执行后会生成phonopy.yaml、band.yaml和band.pdf文件</p>
 <h4 id="8-执行以下命令得到声子谱数据文件PBAND-dat。"><a href="#8-执行以下命令得到声子谱数据文件PBAND-dat。" class="headerlink" title="8.执行以下命令得到声子谱数据文件PBAND.dat。"></a>8.执行以下命令得到声子谱数据文件PBAND.dat。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy-bandplot --gnuplot &gt; PBAND.dat   <span class="comment"># 可导入Origin画图</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/20231109-VASP+Phonopy%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1/%E5%A3%B0%E5%AD%90%E8%B0%B1.png" alt="声子谱"></p>
+<p><img src="/images/20231109-VASP+Phonopy计算声子谱/声子谱.png" alt="声子谱"></p>
 
     </div>
 
@@ -464,8 +480,9 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
@@ -479,9 +496,15 @@
   <script src="/js/third-party/addtoany.js"></script>
 
   
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
