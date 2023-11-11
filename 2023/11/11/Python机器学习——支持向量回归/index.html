@@ -23,33 +23,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"liyihang1024.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="有一天，小王子在其它星球上看到了一大片玫瑰园，玫瑰园里的花儿和小王子的那朵花儿长的一模一样。在玫瑰园里小王子遇到了一只狐狸。狐狸对小王子说，对你而言，我只是一只狐狸，和千千万万只狐狸没有两样。但如果你驯养了我，我们就互相需要了，你就是我世界上惟一的人了，我也是你世上惟一的狐狸了。狐狸说，如果你驯养了我，我的生活就会充满阳光。狐狸说，我不吃面包，我不需要小麦，麦田引不起我的想像力。但你的头发是金灿灿">
+    <meta name="description" content="使用支持向量回归（SVR）进行机器学习在这篇博客中，我们将探讨如何使用支持向量回归（SVR）算法进行机器学习，以及如何在实际数据集上应用此算法。我们将使用 Python 编程语言和 scikit-learn 库，这是一个流行且功能强大的机器学习库。 1. 什么是支持向量回归（SVR）？支持向量回归是一种用于回归问题的机器学习方法，它使用支持向量机（SVM）的原理。与分类问题的 SVM 不同，SVR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小王子语录">
-<meta property="og:url" content="https://liyihang1024.github.io/2023/11/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/index.html">
+<meta property="og:title" content="Python机器学习——支持向量回归">
+<meta property="og:url" content="https://liyihang1024.github.io/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="一一风荷举">
-<meta property="og:description" content="有一天，小王子在其它星球上看到了一大片玫瑰园，玫瑰园里的花儿和小王子的那朵花儿长的一模一样。在玫瑰园里小王子遇到了一只狐狸。狐狸对小王子说，对你而言，我只是一只狐狸，和千千万万只狐狸没有两样。但如果你驯养了我，我们就互相需要了，你就是我世界上惟一的人了，我也是你世上惟一的狐狸了。狐狸说，如果你驯养了我，我的生活就会充满阳光。狐狸说，我不吃面包，我不需要小麦，麦田引不起我的想像力。但你的头发是金灿灿">
+<meta property="og:description" content="使用支持向量回归（SVR）进行机器学习在这篇博客中，我们将探讨如何使用支持向量回归（SVR）算法进行机器学习，以及如何在实际数据集上应用此算法。我们将使用 Python 编程语言和 scikit-learn 库，这是一个流行且功能强大的机器学习库。 1. 什么是支持向量回归（SVR）？支持向量回归是一种用于回归问题的机器学习方法，它使用支持向量机（SVM）的原理。与分类问题的 SVM 不同，SVR">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231110-%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/1.gif">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231110-%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/2.png">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231110-%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/3.png">
-<meta property="og:image" content="https://liyihang1024.github.io/images/20231110-%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/4.png">
-<meta property="article:published_time" content="2023-11-10T03:44:40.000Z">
-<meta property="article:modified_time" content="2023-11-11T04:15:15.013Z">
+<meta property="og:image" content="https://liyihang1024.github.io/images/20231111-pythgon%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92.png">
+<meta property="og:image" content="https://liyihang1024.github.io/images/20231111-pythgon%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/SVR_California_Housing.py,">
+<meta property="article:published_time" content="2023-11-11T11:13:41.000Z">
+<meta property="article:modified_time" content="2023-11-11T12:20:00.818Z">
 <meta property="article:author" content="Liyihang">
-<meta property="article:tag" content="小王子">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://liyihang1024.github.io/images/20231110-%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/1.gif">
+<meta name="twitter:image" content="https://liyihang1024.github.io/images/20231111-pythgon%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92.png">
 
 
-<link rel="canonical" href="https://liyihang1024.github.io/2023/11/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/">
+<link rel="canonical" href="https://liyihang1024.github.io/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/","path":"2023/11/10/小王子语录/","title":"小王子语录"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/","path":"2023/11/11/Python机器学习——支持向量回归/","title":"Python机器学习——支持向量回归"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>小王子语录 | 一一风荷举</title>
+<title>Python机器学习——支持向量回归 | 一一风荷举</title>
   
 
 
@@ -138,7 +137,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -151,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92%EF%BC%88SVR%EF%BC%89%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-text">使用支持向量回归（SVR）进行机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92%EF%BC%88SVR%EF%BC%89%EF%BC%9F"><span class="nav-text">1. 什么是支持向量回归（SVR）？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E9%9B%86%E5%92%8C%E5%87%86%E5%A4%87"><span class="nav-text">2. 数据集和准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">3. 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%9E%84%E5%BB%BA%E5%92%8C%E8%AE%AD%E7%BB%83-SVR-%E6%A8%A1%E5%9E%8B"><span class="nav-text">4. 构建和训练 SVR 模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-text">5. 模型评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%BB%93%E6%9E%9C%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-text">6. 结果可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%80%BB%E7%BB%93"><span class="nav-text">7. 总结</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,7 +242,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/shushu.jpg">
@@ -255,12 +255,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="小王子语录 | 一一风荷举">
+      <meta itemprop="name" content="Python机器学习——支持向量回归 | 一一风荷举">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          小王子语录
+          Python机器学习——支持向量回归
         </h1>
 
         <div class="post-meta-container">
@@ -270,15 +270,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-11-10 11:44:40" itemprop="dateCreated datePublished" datetime="2023-11-10T11:44:40+08:00">2023-11-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-11 12:15:15" itemprop="dateModified" datetime="2023-11-11T12:15:15+08:00">2023-11-11</time>
+      <time title="创建时间：2023-11-11 19:13:41 / 修改时间：20:20:00" itemprop="dateCreated datePublished" datetime="2023-11-11T19:13:41+08:00">2023-11-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,7 +280,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
         </span>
     </span>
 
@@ -304,7 +298,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>795</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -321,17 +315,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>有一天，小王子在其它星球上看到了一大片玫瑰园，玫瑰园里的花儿和小王子的那朵花儿长的一模一样。在玫瑰园里小王子遇到了一只狐狸。狐狸对小王子说，对你而言，我只是一只狐狸，和千千万万只狐狸没有两样。但如果你驯养了我，我们就互相需要了，你就是我世界上惟一的人了，我也是你世上惟一的狐狸了。狐狸说，如果你驯养了我，我的生活就会充满阳光。狐狸说，我不吃面包，我不需要小麦，麦田引不起我的想像力。但你的头发是金灿灿的，它会叫我想起你的，我就会爱上风吹麦子的声音。</p>
-<p><img src="/images/20231110-小王子语录/1.gif" alt="图片"></p>
-<span id="more"></span>
-<p>如果有人钟爱着一朵独一无二的、盛开在浩瀚星海里的花。那么，当他抬头仰望繁星时，便会心满意足。他会告诉自己：“我心爱的花在那里，在那颗遥远的星星上。”可是，如果羊把花吃掉了。那么，对他来说，所有的星光便会在刹那间暗淡无光！而你却认为这并不重要！</p>
-<p><img src="/images/20231110-小王子语录/2.png" alt="图片"></p>
-<p>如果你说你在下午四点来，从三点钟开始，我就开始感觉很快乐，时间越临近，我就越来越感到快乐。到了四点钟的时候，我就会坐立不安，我发现了幸福的价值，但是如果你随便什么时候来，我就不知道在什么时候准备好迎接你的心情了。</p>
-<p><img src="/images/20231110-小王子语录/3.png" alt="图片"></p>
-<p>狐狸说:“对我来说，你只是一个小男孩，就像其他成千上万个小男孩一样没有什么两样。我不需要你。你也不需要我。对你来说，我也只是一只狐狸，和其他成千上万的狐狸没有什么不同。但是，如果你驯养了我，我们就会彼此需要。对我来说，你就是我的世界里独一无二的了;我对你来说也是你的世界里的唯一了。”</p>
-<p>人是没有什么时间去了解什么事情的，他们在商店里买那些现成的东西，但是没有商店可以买到友谊。所以人已经没有朋友了。如果你想要朋友，就请你，驯服我吧！</p>
-<p><img src="/images/20231110-小王子语录/4.png" alt="图片"></p>
-<p>每一个人都有自己的星星，但其中的含意却因人而异。对旅人而言，星星是向导；对其他人而言，它们只不过是天际中闪闪发光的小东西而已；对学者而言，星星则是一门待解的难题；对我那位商人来说，它们就是财富。不过，星星本身是沉默的。你，只有你，了解这些星星与众不同的含义。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="使用支持向量回归（SVR）进行机器学习"><a href="#使用支持向量回归（SVR）进行机器学习" class="headerlink" title="使用支持向量回归（SVR）进行机器学习"></a>使用支持向量回归（SVR）进行机器学习</h1><p>在这篇博客中，我们将探讨如何使用支持向量回归（SVR）算法进行机器学习，以及如何在实际数据集上应用此算法。我们将使用 Python 编程语言和 scikit-learn 库，这是一个流行且功能强大的机器学习库。</p>
+<h2 id="1-什么是支持向量回归（SVR）？"><a href="#1-什么是支持向量回归（SVR）？" class="headerlink" title="1. 什么是支持向量回归（SVR）？"></a>1. 什么是支持向量回归（SVR）？</h2><p>支持向量回归是一种用于回归问题的机器学习方法，它使用支持向量机（SVM）的原理。与分类问题的 SVM 不同，SVR 预测的是一个连续的数值而非离散的类别。SVR 试图找到一个函数，这个函数在整个数据集上有最小的偏差。</p>
+<h2 id="2-数据集和准备"><a href="#2-数据集和准备" class="headerlink" title="2. 数据集和准备"></a>2. 数据集和准备</h2><p>我们将使用 scikit-learn 提供的波士顿房价数据集。这是一个关于房价的数据集，包含房屋以及它们的各种属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_california_housing</span><br><span class="line">data = load_boston()</span><br><span class="line">X, y = data.data, data.target</span><br></pre></td></tr></table></figure>
+<h2 id="3-数据预处理"><a href="#3-数据预处理" class="headerlink" title="3. 数据预处理"></a>3. 数据预处理</h2><p>在开始建模之前，我们需要对数据进行分割和标准化处理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">scaler_X = StandardScaler()</span><br><span class="line">X_train = scaler_X.fit_transform(X_train)</span><br><span class="line">X_test = scaler_X.transform(X_test)</span><br><span class="line"></span><br><span class="line">scaler_y = StandardScaler()</span><br><span class="line">y_train = scaler_y.fit_transform(y_train.reshape(-<span class="number">1</span>, <span class="number">1</span>)).flatten()</span><br><span class="line">y_test = scaler_y.transform(y_test.reshape(-<span class="number">1</span>, <span class="number">1</span>)).flatten()</span><br></pre></td></tr></table></figure>
+<h2 id="4-构建和训练-SVR-模型"><a href="#4-构建和训练-SVR-模型" class="headerlink" title="4. 构建和训练 SVR 模型"></a>4. 构建和训练 SVR 模型</h2><p>现在我们可以创建 SVR 模型，并用训练数据来训练它：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVR</span><br><span class="line"></span><br><span class="line">svr = SVR(kernel=<span class="string">&#x27;rbf&#x27;</span>)</span><br><span class="line">svr.fit(X_train, y_train)</span><br></pre></td></tr></table></figure>
+<h2 id="5-模型评估"><a href="#5-模型评估" class="headerlink" title="5. 模型评估"></a>5. 模型评估</h2><p>使用测试集评估模型的性能：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error, r2_score</span><br><span class="line"></span><br><span class="line">y_pred = svr.predict(X_test)</span><br><span class="line">mse = mean_squared_error(y_test, y_pred)</span><br><span class="line">r2 = r2_score(y_test, y_pred)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;均方误差（MSE）: <span class="subst">&#123;mse&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;R^2 分数: <span class="subst">&#123;r2&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="6-结果可视化"><a href="#6-结果可视化" class="headerlink" title="6. 结果可视化"></a>6. 结果可视化</h2><p>我们可以通过绘制实际值和预测值的对比图来可视化模型性能：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.scatter(y_test, y_pred)</span><br><span class="line">plt.plot([y_test.<span class="built_in">min</span>(), y_test.<span class="built_in">max</span>()], [y_test.<span class="built_in">min</span>(), y_test.<span class="built_in">max</span>()], <span class="string">&#x27;k--&#x27;</span>, lw=<span class="number">2</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;实际值&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;预测值&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;实际值 vs 预测值&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h2><p>在这篇博客中，我们学习了如何使用支持向量回归（SVR）来处理回归问题，并在波士顿房价数据集上实践了这一方法。SVR 提供了一种有效的方式来预测连续数据，并在许多实际应用中表现出色。</p>
+<p><img src="/images/20231111-pythgon机器学习-支持向量回归/支持向量回归.png" alt="下载文件"></p>
+<p><img src="/images/20231111-pythgon机器学习-支持向量回归/SVR_California_Housing.py," alt="下载文件" title="SVR_California_Housing.py"></p>
+<p><a target="_blank" rel="noopener" href="https://pubs.acs.org/doi/epdf/10.1021/acscatal.3c00658">下载文件</a></p>
+<p><a href="/images/20231111-pythgon机器学习-支持向量回归/SVR_California_Housing.py" download>phaser.min.js</a></p>
+<p><a href="/downloads/20231111-pythgon机器学习-支持向量回归/SVR_California_Housing.py" target="_blank">附件1</a></p>
+<p><a href="/downloads/20231111-pythgon机器学习-支持向量回归/SVR_California_Housing.py" download="SVR_California_Housing.py">下载文件</a></p>
 
     </div>
 
@@ -367,7 +369,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://liyihang1024.github.io/2023/11/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E8%AF%AD%E5%BD%95/" title="小王子语录">https://liyihang1024.github.io/2023/11/10/小王子语录/</a>
+      <a href="https://liyihang1024.github.io/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" title="Python机器学习——支持向量回归">https://liyihang1024.github.io/2023/11/11/Python机器学习——支持向量回归/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -393,7 +395,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%B0%8F%E7%8E%8B%E5%AD%90/" rel="tag"><i class="fa fa-tag"></i> 小王子</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           </div>
 
         
@@ -406,14 +409,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/10/VESTA%E6%A8%A1%E6%8B%9FXRD%E8%B0%B1%E5%9B%BE/" rel="prev" title="VESTA模拟XRD图谱">
-                  <i class="fa fa-angle-left"></i> VESTA模拟XRD图谱
+                <a href="/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/" rel="prev" title="一个好玩的元素周期表">
+                  <i class="fa fa-angle-left"></i> 一个好玩的元素周期表
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%84%E4%B8%AA%E7%AE%97%E6%B3%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/" rel="next" title="机器学习各个算法的优缺点概览">
-                  机器学习各个算法的优缺点概览 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
