@@ -23,28 +23,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"liyihang1024.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content=".iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}    .iframe-body-sty&gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}">
+    <meta name="description" content="电荷密度差分分析电荷密度差分（charge density difference）是研究电子结构的一种重要手段，通过它可以直观地观察两个片段相互作用后的电子流向，以及原子在形成分子过程中电子密度的变化，从而探究化学键的本质。一般电荷密度差分主要是指体系的电荷密度与其组成片段的电荷密度之差。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个好玩的元素周期表">
-<meta property="og:url" content="https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/index.html">
+<meta property="og:title" content="VASPKIT绘制电荷差分密度">
+<meta property="og:url" content="https://liyihang1024.github.io/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/index.html">
 <meta property="og:site_name" content="一一风荷举">
-<meta property="og:description" content=".iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}    .iframe-body-sty&gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}">
+<meta property="og:description" content="电荷密度差分分析电荷密度差分（charge density difference）是研究电子结构的一种重要手段，通过它可以直观地观察两个片段相互作用后的电子流向，以及原子在形成分子过程中电子密度的变化，从而探究化学键的本质。一般电荷密度差分主要是指体系的电荷密度与其组成片段的电荷密度之差。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-11T08:51:20.000Z">
-<meta property="article:modified_time" content="2023-11-11T08:55:31.324Z">
+<meta property="og:image" content="https://liyihang1024.github.io/images/20231114-VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/charge_density_difference.png">
+<meta property="article:published_time" content="2023-11-14T11:35:04.000Z">
+<meta property="article:modified_time" content="2023-11-14T12:35:22.983Z">
 <meta property="article:author" content="Liyihang">
-<meta property="article:tag" content="元素周期表">
+<meta property="article:tag" content="VASP">
+<meta property="article:tag" content="VASPKIT">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liyihang1024.github.io/images/20231114-VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/charge_density_difference.png">
 
 
-<link rel="canonical" href="https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/">
+<link rel="canonical" href="https://liyihang1024.github.io/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/","path":"2023/11/11/一个好玩的元素周期表/","title":"一个好玩的元素周期表"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liyihang1024.github.io/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/","path":"2023/11/14/VASPKIT绘制电荷差分密度/","title":"VASPKIT绘制电荷差分密度"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>一个好玩的元素周期表 | 一一风荷举</title>
+<title>VASPKIT绘制电荷差分密度 | 一一风荷举</title>
   
 
 
@@ -133,7 +136,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6%E5%B7%AE%E5%88%86%E5%88%86%E6%9E%90"><span class="nav-text">电荷密度差分分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CHGCAR%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90"><span class="nav-text">CHGCAR文件格式解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vaspkit%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E7%89%87%E6%AE%B5%E7%9A%84%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6%E5%B7%AE"><span class="nav-text">Vaspkit计算两个片段的电荷密度差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BC%98%E5%8C%96OOH%E5%90%B8%E9%99%84%E5%9C%A8MoAg2O4-111-%E8%A1%A8%E9%9D%A2%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-text">1. 优化OOH吸附在MoAg2O4(111)表面的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%86%E5%88%AB%E4%BC%98%E5%8C%96OOH%E5%92%8CMoAg2O4-111-%E8%A1%A8%E9%9D%A2%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-text">2. 分别优化OOH和MoAg2O4(111)表面的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8VASPKIT%E8%BF%9B%E8%A1%8C%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E8%AE%A1%E7%AE%97"><span class="nav-text">3. 使用VASPKIT进行电荷差分计算</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -237,7 +241,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="https://liyihang1024.github.io/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/shushu.jpg">
@@ -250,12 +254,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="一个好玩的元素周期表 | 一一风荷举">
+      <meta itemprop="name" content="VASPKIT绘制电荷差分密度 | 一一风荷举">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一个好玩的元素周期表
+          VASPKIT绘制电荷差分密度
         </h1>
 
         <div class="post-meta-container">
@@ -267,7 +271,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-11 16:51:20 / 修改时间：16:55:31" itemprop="dateCreated datePublished" datetime="2023-11-11T16:51:20+08:00">2023-11-11</time>
+      <time title="创建时间：2023-11-14 19:35:04 / 修改时间：20:35:22" itemprop="dateCreated datePublished" datetime="2023-11-14T19:35:04+08:00">2023-11-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,7 +279,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%A5%BD%E7%8E%A9/" itemprop="url" rel="index"><span itemprop="name">好玩</span></a>
+          <a href="/categories/DFT/" itemprop="url" rel="index"><span itemprop="name">DFT</span></a>
         </span>
     </span>
 
@@ -293,14 +297,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>172</span>
+      <span>3.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -310,11 +314,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><style><br> .iframe-body-sty{position: relative;overflow: hidden;height:600px;width: 1200px;}<br>    .iframe-body-sty&gt;#iframe-shrink{position: relative;transform:scale(0.8);top:-12%;left: -18%;}
-</style></p>
-<p><div class="iframe-body-sty">
- <iframe id="iframe-shrink" src="https://sfo1.jfjf233.me/" width="1100px" height="720px"></iframe>
-</div><br><span id="more"></span></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="电荷密度差分分析"><a href="#电荷密度差分分析" class="headerlink" title="电荷密度差分分析"></a>电荷密度差分分析</h2><p>电荷密度差分（charge density difference）是研究电子结构的一种重要手段，通过它可以直观地观察两个片段相互作用后的电子流向，以及原子在形成分子过程中电子密度的变化，从而探究化学键的本质。一般电荷密度差分主要是指体系的电荷密度与其组成片段的电荷密度之差。</p>
+<span id="more"></span>
+<h2 id="CHGCAR文件格式解析"><a href="#CHGCAR文件格式解析" class="headerlink" title="CHGCAR文件格式解析"></a>CHGCAR文件格式解析</h2><p>CHGCAR文件包含电子密度信息的格点文件，不同的体系（如自旋非极化体系ISPIN = 1 和自旋极化体系ISPIN = 2）会包含不同的数据。CHGCAR的前部分与POSCAR, CONTCAR格式相同，包含晶格矢量、原子核坐标等信息。其后是实空间函数的网格密度，以及电荷密度信息ρ(r) Vcell。举例说明，以下是一个AgAl2O4晶胞的CHGCAR文件内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">AgAl2O4                          </span><br><span class="line">   1.00000000000000     </span><br><span class="line">     5.970688    0.000000    0.000000</span><br><span class="line">     2.985344    5.170767    0.000000</span><br><span class="line">     2.985344    1.723589    4.875046</span><br><span class="line">   Al   O    Ag</span><br><span class="line">     4     8     2</span><br><span class="line">Direct</span><br><span class="line">  0.125000  0.125000  0.125000</span><br><span class="line">  0.125000  0.625000  0.125000</span><br><span class="line">  0.125000  0.125000  0.625000</span><br><span class="line">  0.625000  0.125000  0.125000</span><br><span class="line">  0.896032  0.311903  0.896032</span><br><span class="line">  0.353968  0.353968  0.353968</span><br><span class="line">  0.938097  0.353968  0.353968</span><br><span class="line">  0.353968  0.353968  0.938097</span><br><span class="line">  0.311903  0.896032  0.896032</span><br><span class="line">  0.896032  0.896032  0.311903</span><br><span class="line">  0.353968  0.938097  0.353968</span><br><span class="line">  0.896032  0.896032  0.896032</span><br><span class="line">  0.500000  0.500000  0.500000</span><br><span class="line">  0.750000  0.750000  0.750000</span><br><span class="line"> </span><br><span class="line">   96   96   96</span><br><span class="line"> 0.18168850074E+02 0.18351291176E+02 0.18907802224E+02 0.19865518432E+02 0.21266233626E+02</span><br><span class="line"> 0.23162941221E+02 0.25615466044E+02 0.28686961954E+02 0.32439828896E+02 0.36930625701E+02</span><br><span class="line"> 0.42201321723E+02 0.48265903124E+02 0.55091788621E+02 0.62578622075E+02 0.70538524327E+02</span><br><span class="line"> 0.78684781737E+02 0.86635425342E+02 0.93936164958E+02 0.10010404596E+03 0.10468465971E+03</span><br><span class="line"> 0.10731710731E+03 0.10778641392E+03 0.10605630734E+03 0.10227346625E+03 0.96740352694E+02</span><br><span class="line"> 0.89868950321E+02 0.82112454447E+02 0.73916692000E+02 0.65672458996E+02 0.57691566642E+02</span><br><span class="line"> 0.50203260180E+02 0.43345647396E+02 0.37203505883E+02 0.31808655813E+02 0.27151022210E+02</span><br><span class="line"> 0.23198450946E+02 0.19895699717E+02 0.17176793084E+02 0.14967445399E+02 0.13190491189E+02</span><br><span class="line"> 0.11773110164E+02 0.10649974944E+02 0.97651555604E+01 0.90755463845E+01 0.85482536956E+01</span><br><span class="line"> 0.81590935988E+01 0.78915724986E+01 0.77350114894E+01 0.76834527684E+01 0.77350072287E+01</span><br><span class="line"> 0.78915549761E+01 0.81590824775E+01 0.85482326986E+01 0.90755399075E+01 0.97649179708E+01</span><br></pre></td></tr></table></figure>
+<h2 id="Vaspkit计算两个片段的电荷密度差"><a href="#Vaspkit计算两个片段的电荷密度差" class="headerlink" title="Vaspkit计算两个片段的电荷密度差"></a>Vaspkit计算两个片段的电荷密度差</h2><p>以OER反应中间体OOH吸附在MoAg2O4(111)表面为例，计算电荷密度差的步骤如下：</p>
+<h3 id="1-优化OOH吸附在MoAg2O4-111-表面的结构"><a href="#1-优化OOH吸附在MoAg2O4-111-表面的结构" class="headerlink" title="1. 优化OOH吸附在MoAg2O4(111)表面的结构"></a>1. 优化OOH吸附在MoAg2O4(111)表面的结构</h3><h3 id="2-分别优化OOH和MoAg2O4-111-表面的结构"><a href="#2-分别优化OOH和MoAg2O4-111-表面的结构" class="headerlink" title="2. 分别优化OOH和MoAg2O4(111)表面的结构"></a>2. 分别优化OOH和MoAg2O4(111)表面的结构</h3><p>这一步确保三次自洽计算所采用的FFT mesh一致（NGXF,NGYF,NGZF）。</p>
+<h3 id="3-使用VASPKIT进行电荷差分计算"><a href="#3-使用VASPKIT进行电荷差分计算" class="headerlink" title="3. 使用VASPKIT进行电荷差分计算"></a>3. 使用VASPKIT进行电荷差分计算</h3><p>使用VASPKIT 314功能进行电荷差分计算，并将结果导入VESTA进行可视化。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> ===================== Structural Utilities ======================</span><br><span class="line"> 1)  VASP Input-Files Kit          2)  Mechanical Properties</span><br><span class="line"> 3)  K-Path <span class="keyword">for</span> Band-Structure     4)  Structure Editor</span><br><span class="line"> 5)  Catalysis-ElectroChem Kit     6)  Symmetry Analysis</span><br><span class="line"> 8)  Advanced Structure Models</span><br><span class="line"> ===================== Electronic Utilities ======================</span><br><span class="line"> 11) Density-of-States             21) Band-Structure</span><br><span class="line"> 23) 3D Band-Structure             25) Hybrid-DFT Band-Structure</span><br><span class="line"> 26) Fermi-Surface                 28) Band-Structure Unfolding</span><br><span class="line"> 31) Charge-Density Analysis       42) Potential Analysis</span><br><span class="line"> 51) Wave-Function Analysis        62) Magnetic Properties</span><br><span class="line"> 65) Spin-Texture                  68) Transport Properties</span><br><span class="line"> ======================== Misc Utilities =========================</span><br><span class="line"> 71) Optical Properties            72) Molecular-Dynamics Kit</span><br><span class="line"> 74) User Interface                78) VASP2other Interface</span><br><span class="line"> 91) Semiconductor Kit             92) 2D-Material Kit</span><br><span class="line"> 0)  Quit</span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line"></span><br><span class="line">314   </span><br><span class="line"> ======================= File Options ============================</span><br><span class="line"> Input the Names of Charge/Potential Files with Space: </span><br><span class="line"> (e.g., to get AB-A-B, <span class="built_in">type</span>: ~/AB/CHGCAR ./A/CHGCAR ../B/CHGCAR)</span><br><span class="line"> (e.g., to get A-B, <span class="built_in">type</span>: ~/A/CHGCAR ./B/CHGCAR)</span><br><span class="line"></span><br><span class="line"> ------------&gt;&gt;</span><br><span class="line">./CHGCAR ./OOH/CHGCAR ./slab/CHGCAR</span><br><span class="line"></span><br><span class="line">  --&gt;&gt; (01) Reading Structural Parameters from ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (02) Reading Charge Density From ./CHGCAR File...</span><br><span class="line">  --&gt;&gt; (03) Reading Structural Parameters from ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (04) Reading Charge Density From ./co/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (05) Reading Structural Parameters from ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (06) Reading Charge Density From ./slab/CHGCAR File...</span><br><span class="line">  --&gt;&gt; (07) Written CHGDIFF.vasp File!</span><br></pre></td></tr></table></figure>
+<p>生成CHGDIFF.vasp包含电荷密度差的信息，可以直接导入到VESTA里作图isosurface青色部分电荷密度减小，黄色密度电荷密度增加。</p>
+<p><img src="/images/20231114-VASPKIT绘制电荷差分密度/charge_density_difference.png" alt="图片"></p>
+<div style="text-align: center;">
+    电荷差分密度
+</div>
+
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://blog.shishiruqi.com/2019/07/12/chgdiff/">Vaspkit做电荷密度差图</a></p>
 
     </div>
 
@@ -350,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://liyihang1024.github.io/2023/11/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/" title="一个好玩的元素周期表">https://liyihang1024.github.io/2023/11/11/一个好玩的元素周期表/</a>
+      <a href="https://liyihang1024.github.io/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/" title="VASPKIT绘制电荷差分密度">https://liyihang1024.github.io/2023/11/14/VASPKIT绘制电荷差分密度/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -376,7 +390,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 元素周期表</a>
+              <a href="/tags/VASP/" rel="tag"><i class="fa fa-tag"></i> VASP</a>
+              <a href="/tags/VASPKIT/" rel="tag"><i class="fa fa-tag"></i> VASPKIT</a>
           </div>
 
         
@@ -389,13 +404,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/11/%E6%9E%90%E6%B0%A7%E5%8F%8D%E5%BA%94%EF%BC%88OER%EF%BC%89%E6%9C%BA%E7%90%86/" rel="prev" title="析氧反应（OER）机理">
-                  <i class="fa fa-angle-left"></i> 析氧反应（OER）机理
+                <a href="/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" rel="prev" title="Python机器学习——支持向量回归">
+                  <i class="fa fa-angle-left"></i> Python机器学习——支持向量回归
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/11/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E5%9B%9E%E5%BD%92/" rel="next" title="Python机器学习——支持向量回归">
-                  Python机器学习——支持向量回归 <i class="fa fa-angle-right"></i>
+                <a href="/2023/11/14/VASPKIT%E7%BB%98%E5%88%B6%E5%B9%B3%E9%9D%A2%E5%B9%B3%E5%9D%87%E7%94%B5%E8%8D%B7%E5%B7%AE%E5%88%86%E5%AF%86%E5%BA%A6/" rel="next" title="VASPKIT绘制平面平均电荷差分密度">
+                  VASPKIT绘制平面平均电荷差分密度 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
